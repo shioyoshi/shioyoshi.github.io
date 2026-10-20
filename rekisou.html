@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>歴史マスター - 高校日本史・世界史 定期テスト完全攻略</title>
+<style>
+  :root {
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --primary: #1e3a8a;
+    --primary-light: #2563eb;
+    --primary-accent: #3b82f6;
+    --secondary: #7c3aed;
+    --secondary-light: #8b5cf6;
+    --accent: #0ea5e9;
+    --border: #e2e8f0;
+    --border-hover: #cbd5e1;
+    --success: #16a34a;
+    --success-bg: #f0fdf4;
+    --danger: #dc2626;
+    --danger-bg: #fef2f2;
+    --warning: #d97706;
+    --warning-bg: #fffbeb;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --card-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+  }
+
+  [data-theme="dark"] {
+    --bg-main: #0b0f19;
+    --bg-card: #131b2e;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --primary: #3b82f6;
+    --primary-light: #60a5fa;
+    --primary-accent: #93c5fd;
+    --secondary: #a855f7;
+    --secondary-light: #c084fc;
+    --accent: #38bdf8;
+    --border: #1e293b;
+    --border-hover: #334155;
+    --success: #22c55e;
+    --success-bg: #052e16;
+    --danger: #ef4444;
+    --danger-bg: #450a0a;
+    --warning: #f59e0b;
+    --warning-bg: #451a03;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --card-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-bottom: 40px;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  /* Header */
+  header {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .header-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .logo-icon {
+    background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+  }
+
+  .logo-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #1e3a8a, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  [data-theme="dark"] .logo-title {
+    background: linear-gradient(90deg, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-icon {
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .btn-icon:hover {
+    border-color: var(--primary);
+  }
+
+  .btn-pdf-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+  }
+
+  .btn-pdf-link:hover {
+    filter: brightness(1.1);
+  }
+
+  /* Cards */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--card-shadow);
+  }
+
+  /* Dashboard Stats */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+  }
+
+  .stat-val {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  [data-theme="dark"] .stat-val {
+    color: var(--primary-light);
+  }
+
+  .stat-lbl {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  /* Section Title */
+  .sec-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-main);
+  }
+
+  .sec-title::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 2px;
+  }
+
+  /* Mode Selection Grid */
+  .mode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .mode-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .mode-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-accent);
+    box-shadow: var(--card-hover);
+  }
+
+  .mode-card.active {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(124,58,237,0.04));
+  }
+
+  .mode-badge {
+    align-self: flex-start;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .badge-jp { background: #e0e7ff; color: #3730a3; }
+  .badge-wh { background: #f3e8ff; color: #6b21a8; }
+  .badge-all { background: #e0f2fe; color: #0369a1; }
+  .badge-crit { background: #fee2e2; color: #991b1b; }
+  .badge-weak { background: #fef3c7; color: #92400e; }
+  .badge-quick { background: #dcfce7; color: #166534; }
+
+  .mode-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--text-main);
+  }
+
+  .mode-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+  }
+
+  /* Config Row */
+  .config-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+  }
+
+  .count-selector {
+    display: flex;
+    gap: 6px;
+  }
+
+  .count-btn {
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .count-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  .btn-start {
+    background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(30, 58, 138, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-start:hover {
+    filter: brightness(1.1);
+  }
+
+  /* Unit Accuracy List */
+  .unit-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  @media (max-width: 640px) {
+    .unit-list { grid-template-columns: 1fr; }
+  }
+
+  .unit-item {
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    padding: 10px 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .unit-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  .progress-bg {
+    width: 100%;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: var(--primary-accent);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+  }
+
+  /* Quiz Screen */
+  .quiz-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .quiz-progress-text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .quiz-meta-tags {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .tag-diff-basic { background: #dcfce7; color: #15803d; }
+  .tag-diff-std { background: #e0f2fe; color: #0369a1; }
+  .tag-diff-adv { background: #fef3c7; color: #b45309; }
+
+  .star-btn {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: #cbd5e1;
+    cursor: pointer;
+  }
+
+  .star-btn.active {
+    color: #f59e0b;
+  }
+
+  .question-box {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.6;
+    margin: 16px 0 20px 0;
+    color: var(--text-main);
+  }
+
+  /* 4-Choice */
+  .choice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .choice-btn {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+  }
+
+  .choice-btn:hover:not(:disabled) {
+    border-color: var(--primary-accent);
+    background: var(--bg-main);
+  }
+
+  .choice-label {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .choice-btn.correct {
+    border-color: var(--success);
+    background: var(--success-bg);
+    color: #14532d;
+    font-weight: 600;
+  }
+
+  .choice-btn.correct .choice-label {
+    background: var(--success);
+    color: white;
+    border-color: var(--success);
+  }
+
+  .choice-btn.wrong {
+    border-color: var(--danger);
+    background: var(--danger-bg);
+    color: #7f1d1d;
+  }
+
+  .choice-btn.wrong .choice-label {
+    background: var(--danger);
+    color: white;
+    border-color: var(--danger);
+  }
+
+  /* Fill-in */
+  .fillin-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .fillin-input {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    color: var(--text-main);
+  }
+
+  .fillin-input:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+
+  .btn-submit-answer {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .btn-submit-answer:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* True/False */
+  .tf-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .tf-btn {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    cursor: pointer;
+  }
+
+  .tf-btn:hover:not(:disabled) {
+    border-color: var(--primary-accent);
+  }
+
+  .tf-btn.correct {
+    background: var(--success-bg);
+    border-color: var(--success);
+    color: var(--success);
+  }
+
+  .tf-btn.wrong {
+    background: var(--danger-bg);
+    border-color: var(--danger);
+    color: var(--danger);
+  }
+
+  /* Sorting */
+  .sort-container {
+    margin-bottom: 20px;
+  }
+
+  .sort-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .sort-slot {
+    background: var(--bg-main);
+    border: 1.5px dashed var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .sort-slot.filled {
+    border-style: solid;
+    border-color: var(--primary-accent);
+    background: var(--bg-card);
+    font-weight: 600;
+  }
+
+  .slot-num {
+    background: var(--border);
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .sort-slot.filled .slot-num {
+    background: var(--primary);
+    color: white;
+  }
+
+  .sort-pool {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .sort-card-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+
+  .sort-card-btn:hover:not(:disabled) {
+    border-color: var(--primary);
+  }
+
+  .sort-card-btn.used {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .sort-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .btn-secondary {
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  /* Explanation Card */
+  .explanation-card {
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--primary-accent);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    display: none;
+  }
+
+  .exp-status {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .status-correct { color: var(--success); }
+  .status-wrong { color: var(--danger); }
+
+  .exp-answer {
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+
+  .exp-section {
+    margin: 8px 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .exp-label {
+    font-weight: 700;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .exp-photo {
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    border-top: 1px dashed var(--border);
+    padding-top: 6px;
+  }
+
+  .btn-next {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    display: none;
+  }
+
+  /* Result Screen */
+  .result-banner {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(124,58,237,0.08));
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border);
+  }
+
+  .result-score {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary);
+    line-height: 1.1;
+  }
+
+  .result-rate {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .result-msg {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-main);
+  }
+
+  .result-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  .btn-result {
+    flex: 1;
+    min-width: 160px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+  }
+
+  .btn-accent {
+    background: var(--secondary);
+    color: white;
+  }
+
+  /* Wrong List Accordion */
+  .review-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+
+  .review-q {
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .review-body {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    display: none;
+  }
+
+  .review-body.open {
+    display: block;
+  }
+
+  .hide { display: none !important; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <div class="logo-area" onclick="goHome()">
+      <div class="logo-icon">歴</div>
+      <div>
+        <div class="logo-title">歴史マスター</div>
+        <div style="font-size: 0.7rem; color: var(--text-muted);">定期テスト完全攻略</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="./歴史_完全攻略ノート.pdf" target="_blank" class="btn-pdf-link" title="まとめPDFを開く">
+        📄 暗記ノートPDF
+      </a>
+      <button class="btn-icon" onclick="toggleTheme()" title="ダークモード切り替え" id="themeBtn">🌙</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <!-- ==================== HOME SCREEN ==================== -->
+  <div id="homeScreen">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-val" id="statTodayCount">0</div>
+        <div class="stat-lbl">今日解いた問題</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="statTotalAccuracy">0%</div>
+        <div class="stat-lbl">累計正答率</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="statWeakCount" style="color: var(--danger);">0</div>
+        <div class="stat-lbl">苦手問題数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="statFavoriteCount" style="color: var(--warning);">0</div>
+        <div class="stat-lbl">ブックマーク</div>
+      </div>
+    </div>
+
+    <!-- Mode Selection -->
+    <div class="card">
+      <div class="sec-title">学習モードを選択</div>
+      <div class="mode-grid">
+        <div class="mode-card active" onclick="selectMode('all', this)">
+          <span class="mode-badge badge-all">総合テスト</span>
+          <div class="mode-name">C. 総合テスト</div>
+          <div class="mode-desc">日本史と世界史をランダムに出題。定期テストの実戦力を養成します。</div>
+        </div>
+        <div class="mode-card" onclick="selectMode('jp', this)">
+          <span class="mode-badge badge-jp">日本史</span>
+          <div class="mode-name">A. 日本史テスト</div>
+          <div class="mode-desc">大正政変、護憲運動、大隈・寺内・原敬内閣、大戦景気、米騒動、ワシントン体制。</div>
+        </div>
+        <div class="mode-card" onclick="selectMode('wh', this)">
+          <span class="mode-badge badge-wh">世界史</span>
+          <div class="mode-name">B. 世界史テスト</div>
+          <div class="mode-desc">第一次世界大戦、ロシア革命、ヴェルサイユ条約、国際連盟、アジア民族運動。</div>
+        </div>
+        <div class="mode-card" onclick="selectMode('critical', this)">
+          <span class="mode-badge badge-crit">最重要</span>
+          <div class="mode-name">F. 最重要問題</div>
+          <div class="mode-desc">ノートで赤字・囲み・下線が付いた出題確率の高い知識を最優先。</div>
+        </div>
+        <div class="mode-card" onclick="selectMode('weak', this)">
+          <span class="mode-badge badge-weak">苦手克服</span>
+          <div class="mode-name">E. 苦手克服モード</div>
+          <div class="mode-desc">過去に間違えた問題から優先出題。正解を重ねて苦手を完全脱出！</div>
+        </div>
+        <div class="mode-card" onclick="selectMode('quick', this)">
+          <span class="mode-badge badge-quick">直前チェック</span>
+          <div class="mode-name">G. テスト直前モード</div>
+          <div class="mode-desc">試験前日用。短時間で全範囲の重要語句・因果関係を網羅確認。</div>
+        </div>
+        <div class="mode-card" onclick="selectMode('unit', this)">
+          <span class="mode-badge badge-all">単元別</span>
+          <div class="mode-name">D. 単元別テスト</div>
+          <div class="mode-desc">苦手な単元をピンポイントで集中トレーニングします。</div>
+        </div>
+      </div>
+
+      <!-- Unit Selector Dropdown -->
+      <div id="unitSelectArea" class="hide" style="margin-bottom: 15px;">
+        <label style="font-size: 0.88rem; font-weight: 700; display: block; margin-bottom: 5px;">学習したい単元を選択：</label>
+        <select id="unitDropdown" class="fillin-input" style="padding: 10px;">
+          <!-- Dynamically filled -->
+        </select>
+      </div>
+
+      <!-- Count Selector & Start Button -->
+      <div class="config-row">
+        <div>
+          <span style="font-size: 0.88rem; font-weight: 700; margin-right: 8px;">出題数：</span>
+          <span class="count-selector">
+            <button class="count-btn active" onclick="setCount(10, this)">10問</button>
+            <button class="count-btn" onclick="setCount(20, this)">20問</button>
+            <button class="count-btn" onclick="setCount(30, this)">30問</button>
+            <button class="count-btn" onclick="setCount(999, this)">全問</button>
+          </span>
+        </div>
+        <button class="btn-start" onclick="startQuiz()">
+          <span>🚀 テストを開始する</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Unit Performance Overview -->
+    <div class="card">
+      <div class="sec-title">単元別 正答率状況</div>
+      <div class="unit-list" id="unitStatsList">
+        <!-- Dynamically rendered -->
+      </div>
+      <div style="text-align: right; margin-top: 15px;">
+        <button onclick="confirmResetData()" style="background: none; border: none; color: var(--danger); font-size: 0.78rem; cursor: pointer; text-decoration: underline;">
+          ⚠️ 学習履歴をリセットする
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== QUIZ SCREEN ==================== -->
+  <div id="quizScreen" class="hide">
+    <div class="card">
+      <div class="quiz-top">
+        <div class="quiz-progress-text" id="quizProgressText">第 1 問 / 全 10 問</div>
+        <div class="quiz-meta-tags">
+          <span class="tag" id="qSubjectTag">日本史</span>
+          <span class="tag" id="qDiffTag">標準</span>
+          <button class="star-btn" id="starBtn" onclick="toggleBookmarkCurrent()" title="お気に入り登録">★</button>
+        </div>
+      </div>
+
+      <div class="progress-bg" style="margin-bottom: 15px;">
+        <div class="progress-bar" id="quizProgressBar" style="width: 10%;"></div>
+      </div>
+
+      <div style="font-size: 0.82rem; color: var(--text-muted); font-weight: 600;" id="qUnitTitle">大正政変と政党内閣の展開</div>
+      <div class="question-box" id="questionText">問題文がここに表示されます。</div>
+
+      <!-- 4-Choice Interface -->
+      <div id="choiceInterface" class="choice-list hide">
+        <!-- Dynamically rendered shuffled buttons -->
+      </div>
+
+      <!-- Fill-in Interface -->
+      <div id="fillinInterface" class="fillin-box hide">
+        <input type="text" id="fillinInput" class="fillin-input" placeholder="用語を入力してください..." onkeydown="if(event.key==='Enter') handleFillinAnswer()">
+        <button class="btn-submit-answer" id="btnFillinSubmit" onclick="handleFillinAnswer()">回答</button>
+      </div>
+
+      <!-- True/False Interface -->
+      <div id="tfInterface" class="tf-box hide">
+        <button class="tf-btn" id="btnTfTrue" onclick="handleTfAnswer(true)">⭕️ 正しい</button>
+        <button class="tf-btn" id="btnTfFalse" onclick="handleTfAnswer(false)">❌ 誤り</button>
+      </div>
+
+      <!-- Sorting Interface -->
+      <div id="sortInterface" class="sort-container hide">
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">タップして古い順（年代順）に並べてください：</div>
+        <div class="sort-slots" id="sortSlots">
+          <!-- Filled slots -->
+        </div>
+        <div class="sort-pool" id="sortPool">
+          <!-- Clickable cards (shuffled) -->
+        </div>
+        <div class="sort-actions">
+          <button class="btn-secondary" id="btnSortReset" onclick="resetSortOrder()">やり直す</button>
+          <button class="btn-submit-answer" id="btnSortSubmit" style="flex: 1;" onclick="handleSortAnswer()">決定する</button>
+        </div>
+      </div>
+
+      <!-- Explanation Card -->
+      <div id="explanationCard" class="explanation-card">
+        <div class="exp-status" id="expStatus">正解！</div>
+        <div class="exp-answer" id="expCorrectAnswer">正解：〜</div>
+        <div class="exp-section">
+          <span class="exp-label">【なぜ正解なのか】</span>
+          <span id="expReason">〜</span>
+        </div>
+        <div class="exp-section">
+          <span class="exp-label">【何を覚えるべきか】</span>
+          <span id="expKeyPoint">〜</span>
+        </div>
+        <div class="exp-section">
+          <span class="exp-label">【どこが間違えやすいか】</span>
+          <span id="expTrap">〜</span>
+        </div>
+        <div class="exp-photo" id="expPhoto">元資料：IMG_XXXX</div>
+      </div>
+
+      <button id="btnNext" class="btn-next" onclick="nextQuestion()">次の問題へ 進む 👉</button>
+    </div>
+  </div>
+
+  <!-- ==================== RESULT SCREEN ==================== -->
+  <div id="resultScreen" class="hide">
+    <div class="card">
+      <div class="result-banner">
+        <div class="result-score" id="resScore">8 / 10</div>
+        <div class="result-rate" id="resRate">正答率 80%</div>
+        <div class="result-msg" id="resMsg">素晴らしい！定期テストで高得点が期待できます！</div>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-result btn-primary" onclick="restartCurrentQuiz()">🔄 もう一度挑戦</button>
+        <button class="btn-result btn-accent" id="btnRetryWrong" onclick="retryWrongOnly()">❌ 間違えた問題だけ再挑戦</button>
+        <button class="btn-result btn-secondary" onclick="goHome()">🏠 ホームへ戻る</button>
+      </div>
+
+      <!-- Unit Performance Breakdown -->
+      <div class="sec-title">単元別 成績結果</div>
+      <div class="unit-list" id="resUnitBreakdown" style="margin-bottom: 25px;">
+        <!-- Filled -->
+      </div>
+
+      <!-- Review Section -->
+      <div class="sec-title" id="resReviewTitle">間違えた問題の復習</div>
+      <div id="resReviewList">
+        <!-- Accordion items -->
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  // All 125 Embedded Questions Data
+  const ALL_QUESTIONS = [{"id": "J01", "subject": "日本史", "unit": "大正政変と政党内閣の展開", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4135 / IMG_4151", "question": "第2次西園寺公望内閣が総辞職する原因となった、陸軍が朝鮮配備などを理由に要求した政策は何ですか。", "options": ["2個師団増設問題", "軍部大臣現役武官制の廃止", "シベリア出兵の決定", "八八艦隊計画の要求"], "answer": 0, "explanation": {"reason": "陸軍の上原勇作陸相が朝鮮配備を理由に2個師団増設を要求し、内閣が財政難を理由に拒絶したため単独で辞任。後任陸相が得られず総辞職しました。", "key_point": "「陸軍2個師団増設要求 → 上原勇作陸相の単独辞任 → 軍部大臣現役武官制の悪用による内閣倒壊」という因果関係を押さえる。", "trap": "海軍ではなく「陸軍」、師団数は「2個」である点に注意。八八艦隊は海軍の軍備計画です。", "photo": "IMG_4135"}}, {"id": "J02", "subject": "日本史", "unit": "大正政変と政党内閣の展開", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4151", "question": "第1次護憲運動で、藩閥政治の打倒を掲げて叫ばれたスローガン「［　］・憲政擁護」の［　］に入る言葉を漢字4字で答えなさい。", "answer": "閥族打破", "aliases": ["ばつぞくだほ", "閥族", "ばつぞく"], "explanation": {"reason": "藩閥政府（長州閥の桂太郎）の専制を倒す目標として「閥族打破」、立憲憲政の確立をめざす「憲政擁護」が叫ばれました。", "key_point": "第1次護憲運動の二大スローガン＝「閥族打破（ばつぞくだほ）・憲政擁護（けんせいようご）」。尾崎行雄と犬養毅が主導。", "trap": "「軍閥打破」ではなく藩閥勢力を指す「閥族打破」です。設問が「漢字4字」なら「閥族打破」、「漢字2字」なら「閥族」と答えます。", "photo": "IMG_4151"}}, {"id": "J03", "subject": "日本史", "unit": "大正政変と政党内閣の展開", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4151", "question": "第1次護憲運動において「憲政の神様」と呼ばれ、立憲政友会で桂太郎内閣を弾劾する演説を行った政治家は誰ですか。", "options": ["尾崎行雄", "犬養毅", "吉野作造", "原敬"], "answer": 0, "explanation": {"reason": "尾崎行雄は立憲政友会に所属し、「玉座を以て胸壁となし…」という有名な桂内閣弾劾演説を行い、「憲政の神様」と称されました。", "key_point": "尾崎行雄（立憲政友会・「憲政の神様」）と犬養毅（立憲国民党・後に五・一五事件で暗殺）の所属政党と役割を区別する。", "trap": "犬養毅も護憲運動の指導者ですが、立憲国民党所属です。設問の「立憲政友会」という記述に注目。", "photo": "IMG_4151"}}, {"id": "J04", "subject": "日本史", "unit": "大正政変と政党内閣の展開", "type": "tf", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4151", "question": "第1次山本権兵衛内閣は、軍部大臣現役武官制を廃止し、文官任用令を改正して政党員の登用を容易にした。", "answer": false, "explanation": {"reason": "軍部大臣現役武官制を「廃止」したのではなく、「予備役・後備役まで資格を拡大（緩和）」したのが正しい記述です。", "key_point": "山本権兵衛の改革は「現役武官制の緩和（予備役・後備役も含める）」であり完全廃止ではありません。", "trap": "「廃止」と「緩和」の違いは正誤問題の頻出トラップです。完全廃止されたわけではありません。", "photo": "IMG_4151"}}, {"id": "J05", "subject": "日本史", "unit": "大正政変と政党内閣の展開", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4151", "question": "第1次山本権兵衛内閣が総辞職する契機となった、海軍の高官への贈収賄汚職事件は何ですか。", "options": ["シーメンス事件", "虎の門事件", "満州某重大事件", "疑獄事件"], "answer": 0, "explanation": {"reason": "ドイツのシーメンス社やイギリスのヴィッカース社からの軍艦・兵器購入にまつわる海軍高官の収賄事件（シーメンス事件）が発覚し、民衆の非難を浴びて山本内閣は倒れました。", "key_point": "山本権兵衛内閣（海軍出身）の退陣原因＝「シーメンス事件（1914年）」。", "trap": "虎の門事件（1923・摂政宮狙撃事件で第2次山本内閣総辞職）と第1次山本内閣のシーメンス事件を混同しないようにする。", "photo": "IMG_4151"}}, {"id": "J06", "subject": "日本史", "unit": "大正政変と政党内閣の展開", "type": "sort", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4151", "question": "大正初期の内閣を、成立した順に正しく並べ替えなさい。", "options": ["第3次桂太郎内閣（大正政変で53日で退陣）", "第1次山本権兵衛内閣（シーメンス事件で退陣）", "第2次大隈重信内閣（第一次世界大戦参戦）", "寺内正毅内閣（米騒動で退陣）"], "answer": [0, 1, 2, 3], "explanation": {"reason": "第3次桂内閣（1912.12）→ 第1次山本内閣（1913.2）→ 第2次大隈内閣（1914.4）→ 寺内内閣（1916.10）の順です。", "key_point": "内閣の継承順：桂3 → 山本1 → 大隈2 → 寺内 → 原敬。それぞれの退陣理由（大正政変、汚職、大戦指導困難、米騒動）もセットで覚える。", "trap": "山本権兵衛と大隈重信の順番を逆にしてしまうミスが多いです。", "photo": "IMG_4151"}}, {"id": "J07", "subject": "日本史", "unit": "大正デモクラシーの思想と運動", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4151", "question": "吉野作造が大日本帝国憲法の下で民主主義を導入するために提唱した理論は何ですか。", "options": ["民本主義", "天皇機関説", "国家法人説", "社会主義"], "answer": 0, "explanation": {"reason": "吉野作造は主権在民の民主主義（憲法上天皇主権と抵触）を避け、主権の行使目的を民衆の幸福に置き、政策決定を民衆の意向に基づくとする「民本主義」を唱えました。", "key_point": "吉野作造＝民本主義。『中央公論』に論文を発表。東京帝国大学の学生団体「新人会」結成に影響。", "trap": "「民主主義」と「民本主義」の違い（主権の所在を問わず運用のあり方を説いた）が定期テストで記述・正誤として頻出。", "photo": "IMG_4151"}}, {"id": "J08", "subject": "日本史", "unit": "大正デモクラシーの思想と運動", "type": "fillin", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4151", "question": "吉野作造の指導を受け、東京帝国大学の学生らが結成した大正デモクラシー期の代表的な学生運動団体は何ですか。", "answer": "新人会", "aliases": ["しんじんかい"], "explanation": {"reason": "吉野作造の思想に影響を受けた麻生久や赤松克麿らが結成した学生団体が「新人会」です。", "key_point": "吉野作造・民本主義 → 東大「新人会」。大正期の学生・社会運動の中心となりました。", "trap": "黎明会（知識人の啓発団体）と新人会（学生団体）の混同に注意。", "photo": "IMG_4151"}}, {"id": "J09", "subject": "日本史", "unit": "大正デモクラシーの思想と運動", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4151", "question": "美濃部達吉が唱えた憲法学説で、国家を法人とし、天皇をその最高機関と位置づけた学説は何ですか。", "options": ["天皇機関説", "民本主義", "君主主権説", "神権天皇説"], "answer": 0, "explanation": {"reason": "美濃部達吉の天皇機関説は、国家を法的主体（法人）とし、統治権は国家にあり、天皇はその最高機関として憲法に従って権力を行使すると説明しました。", "key_point": "美濃部達吉＝天皇機関説（国家法人説）。政党内閣の憲法上の根拠となり、官吏登用試験などでも正説として公認されました。", "trap": "対立した学者である上杉慎吉（天皇主権説・君主絶対説）との対立関係も押さえておきましょう。", "photo": "IMG_4151"}}, {"id": "J10", "subject": "日本史", "unit": "大正デモクラシーの思想と運動", "type": "tf", "difficulty": "応用", "is_critical": false, "source_photo": "IMG_4151", "question": "美濃部達吉の天皇機関説と対立し、天皇は国家そのものであり絶対的権力を持つとする君主主権説を主張したのは吉野作造である。", "answer": false, "explanation": {"reason": "美濃部達吉と論争したのは東京帝国大学教授の上杉慎吉（うえすぎしんきち）です。吉野作造は民本主義を提唱した人物です。", "key_point": "天皇機関説の美濃部達吉 vs 君主主権説の上杉慎吉の論争を押さえる。", "trap": "吉野作造と上杉慎吉の人名入れ替えはテスト定番の間違い選択肢です。", "photo": "IMG_4151"}}, {"id": "J11", "subject": "日本史", "unit": "第一次世界大戦と日本の参戦", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4136 / IMG_4151", "question": "1914年の第一次世界大戦勃発時、第2次大隈重信内閣は何を口実にしてドイツに宣戦布告しましたか。", "options": ["日英同盟", "日露協約", "日仏協約", "三国干渉"], "answer": 0, "explanation": {"reason": "加藤高明外相主導のもと、日本は「日英同盟の情誼」を理由・口実にして参戦を決定しました。", "key_point": "第一次世界大戦参戦の口実＝「日英同盟」。元老の山県有朋らはヨーロッパの戦乱を「天佑（天の助け）」と呼びました。", "trap": "三国同盟ではなく「日英同盟」です。日露協約も当時は存在していましたが参戦の直接名目ではありません。", "photo": "IMG_4136"}}, {"id": "J12", "subject": "日本史", "unit": "第一次世界大戦と日本の参戦", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4136 / IMG_4142", "question": "第一次世界大戦で日本軍が攻撃・占領したドイツの中国における軍事拠点はどこですか。", "options": ["山東半島の青島（膠州湾）", "遼東半島の旅順", "長春", "上海"], "answer": 0, "explanation": {"reason": "日本陸海軍はドイツの東洋艦隊基地であった山東半島の青島（チンタオ / 膠州湾）を攻略・占領しました。", "key_point": "山東省青島（膠州湾）のドイツ権益を奪取したことが、後の「対華二十一カ条要求」第1号につながります。", "trap": "旅順・大連は日露戦争でロシアから租借権を獲得した場所です。混同しないこと。", "photo": "IMG_4136"}}, {"id": "J13", "subject": "日本史", "unit": "第一次世界大戦と日本の参戦", "type": "fillin", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4136 / IMG_4159 / IMG_4162", "question": "日本海軍が第一次世界大戦中に占領し、大戦後に国際連盟から日本の委任統治領として認められた赤道以北の太平洋諸地域を何と呼びますか。", "answer": "南洋諸島", "aliases": ["なんようしょとう", "ドイツ領南洋諸島", "赤道以北の南洋諸島"], "explanation": {"reason": "日本海軍は赤道以北のドイツ領南洋諸島（マーシャル、マリアナ、カロリン諸島など）を占領し、ヴェルサイユ条約後に国際連盟の「委任統治地域（C式）」となりました。", "key_point": "日本の進出先：山東半島青島 ＋ 赤道以北の「南洋諸島（委任統治領）」。", "trap": "「南洋諸島」の赤道以南はオーストラリアやニュージーランドの委任統治領となりました。日本は「赤道以北」です。", "photo": "IMG_4162"}}, {"id": "J14", "subject": "日本史", "unit": "対華二十一カ条要求と日中関係", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4136 / IMG_4151 / IMG_4153", "question": "1915年に第2次大隈重信内閣が中国（袁世凱政権）に突きつけた「対華二十一カ条要求」で、列強の激しい反発を受けて最終的に撤回した要求群は何号ですか。", "options": ["第5号（警察・財政顧問への日本人採用など）", "第1号（山東省の旧ドイツ権益継承）", "第2号（南満洲および東部内蒙古の権益延長）", "第3号（漢冶萍公司の日中合弁）"], "answer": 0, "explanation": {"reason": "第5号は「中国政府への日本人顧問招聘」「警察の日中共同管轄」などの主権侵害的な希望条項であり、列強や中国の反発により日本は最後通牒で第5号を削除して受諾させました。", "key_point": "第1〜4号＝要求事項、第5号＝希望条項（最終的に撤回・保留）。袁世凱は1915年5月9日に受諾し、中国では「国恥記念日」と呼ばれた。", "trap": "第1号から第4号の内容も頻出：1号＝山東、2号＝南満洲・東部内蒙古99年延長、3号＝漢冶萍公司（鉱山合弁）、4号＝沿岸不割譲。", "photo": "IMG_4153"}}, {"id": "J15", "subject": "日本史", "unit": "対華二十一カ条要求と日中関係", "type": "fillin", "difficulty": "応用", "is_critical": false, "source_photo": "IMG_4153", "question": "中国の袁世凱総統が日本の最後通牒に屈して対華二十一カ条要求の主要部分を受諾した5月9日は、中国で何と呼ばれ国民の屈辱と憤りの記念日とされましたか。", "answer": "国恥記念日", "aliases": ["こくちきねんび", "国恥の日"], "explanation": {"reason": "中国側は5月9日を「国の恥（国恥記念日）」と定め、激しい反日ボイコット運動や後の五四運動（1919年）の原動力となりました。", "key_point": "二十一カ条要求受諾（1915.5.9）＝「国恥記念日」→ 1919年「五四運動」への布石。", "trap": "五四運動のきっかけはパリ講和会議での山東権益処分ですが、根底にはこの国恥記念日の屈辱があります。", "photo": "IMG_4153"}}, {"id": "J16", "subject": "日本史", "unit": "第一次世界大戦と日本の参戦", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4141", "question": "1917年、アメリカが第一次世界大戦に参戦した際、日米間で結ばれ、日本の中国における特殊権益を認める見返りに中国の門戸開放・機会均等を再確認した協定は何ですか。", "options": ["石井・ランシング協定", "桂・タフト協定", "高平・ルート協定", "日米修好通商条約"], "answer": 0, "explanation": {"reason": "日本の特使・石井菊次郎とアメリカ国務長官ランシングの間で調印された協定で、日本の中国特殊権益（地理的隣接による）を米が承認し、米の主張する門戸開放・機会均等を日米で誓約しました。", "key_point": "石井・ランシング協定（1917年）。後のワシントン会議（九カ国条約締結時、1923年）で破棄されます。", "trap": "桂・タフト協定（1905・韓国とフィリピンの交換承認）、高平・ルート協定（1908）との時期・内容の混同に注意。", "photo": "IMG_4141"}}, {"id": "J17", "subject": "日本史", "unit": "シベリア出兵とロシア革命", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4136 / IMG_4145 / IMG_4160", "question": "1918年に寺内正毅内閣が決定したシベリア出兵の国際的な名目は何でしたか。", "options": ["チェコスロバキア軍の救援", "白軍（反革命派）の援助", "日露同盟の維持", "東支鉄道の警備"], "answer": 0, "explanation": {"reason": "ロシア国内で孤立したオーストリア捕虜出身のチェコスロバキア軍団を救援するという名目で、日米英仏が共同出兵を決定しました。", "key_point": "シベリア出兵の名目＝「チェコスロバキア軍救援」。しかし実質は「ロシア革命（ボリシェヴィキ政権）の打倒・封じ込め」。", "trap": "名目（タテマエ）と実質（ホンネ）を区別する。テストで「名目は何か」と聞かれたらチェコスロバキア軍救援です。", "photo": "IMG_4145"}}, {"id": "J18", "subject": "日本史", "unit": "シベリア出兵とロシア革命", "type": "tf", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4145 / IMG_4160", "question": "シベリア出兵において、アメリカが1920年に撤兵した後も日本軍は駐留を続け、1922年に沿海州から撤兵し、北樺太からは1925年の日ソ基本条約締結まで撤退しなかった。", "answer": true, "explanation": {"reason": "日本は他国が撤退した後も領土的野心や尼港事件（1920）の保障占領を理由に駐兵を続け、巨額の軍事費と国際的孤立を招きました。本土沿海州からは1922年、北樺太からは1925年撤退です。", "key_point": "日本単独のシベリア駐兵継続 → 尼港事件 → 国際的非難 → 1922年撤退（北樺太は1925年）。", "trap": "「他国と同時に一斉に撤退した」という誤文トラップに注意。", "photo": "IMG_4145"}}, {"id": "J19", "subject": "日本史", "unit": "シベリア出兵とロシア革命", "type": "fillin", "difficulty": "応用", "is_critical": false, "source_photo": "IMG_4145", "question": "1920年にシベリア出兵中の日本軍守備隊および日本人居留民数百名がロシアのパルチザンによって殺害された事件を何というか。", "answer": "尼港事件", "aliases": ["にこうじけん", "ニコラエフスク事件"], "explanation": {"reason": "アムール川河口のニコラエフスク（尼港）で日本軍守備隊と居留民約700名が赤軍パルチザンに殲滅され、日本政府はこれを口実に北樺太の保障占領を行いました。", "key_point": "尼港事件（1920年）＝シベリア出兵の惨事。北樺太占領の口実となった。", "trap": "漢字「尼港」または「ニコラエフスク」。ノートや教科書のコラムでよく取り上げられます。", "photo": "IMG_4145"}}, {"id": "J20", "subject": "日本史", "unit": "大戦景気と社会変動", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4136 / IMG_4137", "question": "第一次世界大戦による大戦景気によって、日本の対外債権・債務関係はどう変化しましたか。", "options": ["約11億円の債務国から、27億円以上の対外純債権国へと転換した", "債務がさらに膨らみ財政危機に陥った", "変化はなく貿易赤字が継続した", "アメリカに対する多額の借款国となった"], "answer": 0, "explanation": {"reason": "大戦前は約11億円の対外純債務を抱えて日露戦争後の財政危機に瀕していましたが、大戦中の輸出急増と海運業好況により一挙に27億円超の純債権国へ飛躍しました。", "key_point": "大戦景気の結果＝「債務国から債権国への劇的転換」。アメリカとともに債権国となりました。", "trap": "戦前＝債務国、戦中・戦後＝債権国。この逆転関係は記述・選択問題の最頻出項目です。", "photo": "IMG_4137"}}, {"id": "J21", "subject": "日本史", "unit": "大戦景気と社会変動", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4137 / IMG_4159", "question": "大戦景気により海運業・造船業や商社などで急激に巨万の富を築いた富裕層を、百円札を燃やして靴を探す風刺画などで有名な言葉で何と呼びますか。", "answer": "成金", "aliases": ["なりきん", "船成金"], "explanation": {"reason": "和田邦坊が描いた風刺画「どうだ明るくなったろう」で料亭の暗がりで百円札を燃やす姿が有名な「成金（船成金）」が大量に出現しました。", "key_point": "成金（特に海運・造船の「船成金」、鈴木商店など）。大戦景気の象徴的風俗。", "trap": "「財閥」と「成金」の区別。既存の三井・三菱などの財閥に対し、急激に台頭した新興富裕層を成金と呼びます。", "photo": "IMG_4159"}}, {"id": "J22", "subject": "日本史", "unit": "大戦景気と社会変動", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4164", "question": "第一次世界大戦期における日本の産業構造の変化として正しいものはどれですか。", "options": ["工業生産額が農業生産額を上回り、重化学工業の比率が拡大した", "農業生産額が依然として全体の80％以上を占めていた", "綿糸・生糸などの軽工業が全滅し、自動車産業が主力となった", "第3次産業が衰退し、第1次産業への回帰が起こった"], "answer": 0, "explanation": {"reason": "大戦景気により工場労働者が急増し、工業生産額が農業生産額を追い抜き、造船・鉄鋼・化学などの重化学工業の基礎が築かれました。", "key_point": "日本の産業構造＝農業国から工業国へ脱皮。「工業生産額 ＞ 農業生産額」の逆転。", "trap": "軽工業が全滅したわけではなく、繊維産業もアジア市場で英製品を駆逐して大躍進しました。", "photo": "IMG_4164"}}, {"id": "J23", "subject": "日本史", "unit": "大戦景気と社会変動", "type": "tf", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4137 / IMG_4152", "question": "大戦景気の最中、一般の都市生活者や労働者の実質賃金は物価上昇を大きく上回り、生活は極めて豊かになった。", "answer": false, "explanation": {"reason": "インフレーションによる急激な物価高騰（特に主食である米価暴騰）に対して賃金の伸びが追いつかず、実質賃金は低下して庶民や労働者の生活は窮乏化しました。", "key_point": "「好景気だが激しいインフレ → 実質賃金低下 → 生活苦」が米騒動の直接の経済的背景。", "trap": "成金が贅沢をする一方で、一般庶民は猛烈なインフレに苦しんでいたという格差の拡大を把握する。", "photo": "IMG_4152"}}, {"id": "J24", "subject": "日本史", "unit": "米騒動と原敬内閣", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4137 / IMG_4152", "question": "1918年7月、米騒動の最初の発端となった富山県の海岸沿いの町はどこですか。", "answer": "魚津", "aliases": ["うおづ", "富山県魚津", "魚津町"], "explanation": {"reason": "富山県魚津（うおづ）の漁師の妻たちが、米の県外移出を阻止しようと米屋に談判した「越中女房一揆」が発端となりました。", "key_point": "1918年米騒動の発端地＝「富山県魚津（越中女房一揆）」。", "trap": "「富山市」ではなく「魚津町（現・魚津市）」です。細かい地名ですがテスト頻出。", "photo": "IMG_4152"}}, {"id": "J25", "subject": "日本史", "unit": "米騒動と原敬内閣", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4137 / IMG_4152", "question": "1918年の米騒動で米価が異常高騰した原因として、大戦景気のインフレに加え、米商人が見越して買い占めを行った出来事は何ですか。", "options": ["シベリア出兵", "青島占領", "対華二十一カ条要求", "五四運動"], "answer": 0, "explanation": {"reason": "政府のシベリア出兵決定を見越した米穀商人や地主が、軍用米としての需要増による値上がりを期待して米を買い占め・売り惜しみしたため米価が暴騰しました。", "key_point": "米騒動の引き金＝「シベリア出兵による軍用米需要の見込み買い占め」。", "trap": "米騒動とシベリア出兵の密接な因果関係をしっかり結びつけておく必要があります。", "photo": "IMG_4152"}}, {"id": "J26", "subject": "日本史", "unit": "米騒動と原敬内閣", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4137 / IMG_4151 / IMG_4152", "question": "1918年の全国的な米騒動を軍隊出動で鎮圧した責任をとって総辞職した内閣はどれですか。", "options": ["寺内正毅内閣", "大隈重信内閣", "山本権兵衛内閣", "桂太郎内閣"], "answer": 0, "explanation": {"reason": "「ビリケン内閣」と呼ばれた非立憲の寺内正毅内閣は、米騒動の新聞報道を規制し軍隊を出動させましたが民衆の批判を浴びて倒閣しました。", "key_point": "寺内正毅内閣＝非立憲・超然内閣、シベリア出兵決定、米騒動で総辞職。", "trap": "寺内内閣の倒壊によって、次の「原敬内閣」が誕生するという政権交代の流れを押さえる。", "photo": "IMG_4151"}}, {"id": "J27", "subject": "日本史", "unit": "米騒動と原敬内閣", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4137 / IMG_4151", "question": "米騒動の後に成立し、日本で最初の「本格的政党内閣」を組織した立憲政友会総裁の首相は誰ですか。", "answer": "原敬", "aliases": ["はらたかし", "はら たかし"], "explanation": {"reason": "陸相・海相・外相を除く全閣僚を立憲政友会の党員で固め、衆議院の第一党が内閣を組織する本格的政党内閣を実現しました。", "key_point": "原敬＝立憲政友会総裁、爵位を持たない衆議院議員であったため「平民宰相」と呼ばれた。", "trap": "日本初の内閣総理大臣（伊藤博文）や日本初の政党内閣（大隈重信・板垣退助の隈板内閣）と、「本格的政党内閣（原敬）」の区別に注意。", "photo": "IMG_4151"}}, {"id": "J28", "subject": "日本史", "unit": "米騒動と原敬内閣", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4151", "question": "原敬内閣が実施した選挙制度改革の内容として正しいものはどれですか。", "options": ["直接国税の納税要件を3円以上に引き下げ、小選挙区制を導入した", "25歳以上の全男子に選挙権を与える普通選挙を実施した", "納税要件を完全に撤廃し、大選挙区制を採用した", "女性にも参政権を認める法案を可決した"], "answer": 0, "explanation": {"reason": "1919年に衆議院議員選挙法を改正し、直接国税を10円から3円に引き下げ、政友会に有利な小選挙区制を導入しました。原敬は普通選挙には時期尚早として反対しました。", "key_point": "原敬の選挙法改正＝「直接国税3円以上」「小選挙区制」。普通選挙（男子普選）には反対した。", "trap": "普通選挙を実現したのは加藤高明内閣（1925年）です。原敬は普選運動を弾圧・拒絶した点が出題の落とし穴。", "photo": "IMG_4151"}}, {"id": "J29", "subject": "日本史", "unit": "米騒動と原敬内閣", "type": "choice4", "difficulty": "応用", "is_critical": false, "source_photo": "IMG_4151", "question": "原敬内閣の4大政綱（政策）に含まれないものはどれですか。", "options": ["男子普通選挙の即時実施", "教育の改善（大学令・高等学校令）", "交通機関の整備（鉄道拡張）", "国防の充実および産業の振興"], "answer": 0, "explanation": {"reason": "原敬内閣の四大政綱は「教育改善」「交通整備（鉄道敷設）」「国防充実」「産業振興」であり、普通選挙の実施は含まれず、むしろ拒否しました。", "key_point": "原敬の政策：高等教育拡充（大学令で私立大学公認）、鉄道建設による党勢拡張（我田引鉄）。", "trap": "平民宰相だから普通選挙をやったはずだという思い込みを突く問題です。", "photo": "IMG_4151"}}, {"id": "J30", "subject": "日本史", "unit": "パリ講和会議と日本の外交", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4139 / IMG_4141", "question": "1919年のパリ講和会議に日本が派遣した全権使節団の首席全権は誰ですか。", "options": ["西園寺公望", "牧野伸顕", "原敬", "加藤友三郎"], "answer": 0, "explanation": {"reason": "元首相の西園寺公望（元老）が首席全権、牧野伸顕（前内大臣）らが次席全権として参加しました。", "key_point": "パリ講和会議の日本全権＝西園寺公望（首席）・牧野伸顕。", "trap": "ワシントン会議の全権（加藤友三郎海相、徳川家達貴族院議長）と混同しないようにする。", "photo": "IMG_4141"}}, {"id": "J31", "subject": "日本史", "unit": "パリ講和会議と日本の外交", "type": "fillin", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4139 / IMG_4141", "question": "パリ講和会議において、日本が国際連盟規約の草案に盛り込むよう主張したものの、イギリスやアメリカの反対で否決された提案は何ですか。", "answer": "人種差別撤廃提案", "aliases": ["人種的差別撤廃提案", "人種差別撤廃", "人種差別撤廃条項"], "explanation": {"reason": "日本は国際連盟規約に「人種平等の原則」を挿入することを提案し過半数の賛成を得たものの、米議長ウィルソンが全会一致を主張し英米豪の反発により不採用となりました。", "key_point": "日本の提案＝「人種差別撤廃提案」。国際会議で国家平等を公式に求めた先駆的試み。", "trap": "日本自身の帝国主義的進出（中国権益要求）と人種差別撤廃提案の二面性が問われます。", "photo": "IMG_4141"}}, {"id": "J32", "subject": "日本史", "unit": "パリ講和会議と日本の外交", "type": "tf", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4139 / IMG_4140 / IMG_4161", "question": "1920年に設立された国際連盟において、日本はアメリカ、イギリス、フランスとともに常任理事国となった。", "answer": false, "explanation": {"reason": "アメリカは連盟規約を否決したため国際連盟に加盟していません。常任理事国はイギリス、フランス、イタリア、日本の4カ国でした。", "key_point": "国際連盟の常任理事国4カ国＝英・仏・伊・日。（米は不参加、ソ連・ドイツは当初排除）。", "trap": "「アメリカが常任理事国」という記述は歴史上の超定番ひっかけです。", "photo": "IMG_4161"}}, {"id": "J33", "subject": "日本史", "unit": "ワシントン体制と軍縮", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4161 / IMG_4162", "question": "1921〜1922年にアメリカ大統領ハーディングの提唱で開催されたワシントン会議の目的として最も適切なものはどれですか。", "options": ["アジア・太平洋地域の国際秩序再編と海軍軍備制限", "第一次世界大戦のドイツへの賠償金取り立て", "ロシア・ソヴィエト政権への共同軍事攻撃の策定", "ヨーロッパの国境確定と関税同盟の結成"], "answer": 0, "explanation": {"reason": "対米英建艦競争の激化を抑え、大戦中にアジア・太平洋へ勢力を拡大した日本の進出を抑制し、協調関係を構築するために開催されました。", "key_point": "ワシントン会議（1921-22）＝「アジア・太平洋秩序（米主導）」＋「海軍軍縮」。", "trap": "ヴェルサイユ体制（ヨーロッパ中心）とワシントン体制（東アジア・太平洋中心）の役割分担を理解する。", "photo": "IMG_4162"}}, {"id": "J34", "subject": "日本史", "unit": "ワシントン体制と軍縮", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4162", "question": "ワシントン会議で調印された「四カ国条約」によって解消・破棄された同盟は何ですか。", "options": ["日英同盟", "三国同盟", "露仏同盟", "日露協約"], "answer": 0, "explanation": {"reason": "米英日仏の四カ国条約（太平洋諸島の領有維持）が成立したことにより、アメリカが警戒していた日英同盟（1902年〜）は発展的解消という名目で破棄されました。", "key_point": "四カ国条約の締結 → 「日英同盟の破棄」。", "trap": "九カ国条約（中国主権・門戸開放）と四カ国条約（太平洋諸島・日英同盟破棄）の内容の取り違えに注意。", "photo": "IMG_4162"}}, {"id": "J35", "subject": "日本史", "unit": "ワシントン体制と軍縮", "type": "fillin", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4162", "question": "ワシントン会議で調印された、中国の主権尊重・門戸開放・機会均等を原則とし、石井・ランシング協定の破棄や山東半島の権益返還につながった条約を何条約というか。", "answer": "九カ国条約", "aliases": ["きゅうかこくじょうやく", "9カ国条約"], "explanation": {"reason": "九カ国条約により、中国における門戸開放・機会均等・主権尊重が確認され、日本の対華21カ条要求による特殊権益や石井・ランシング協定は実質的に解消されました。", "key_point": "九カ国条約＝中国に関する条約。山東半島の旧ドイツ利権の中国返還協定も成立。", "trap": "四カ国条約（太平洋諸島、米英日仏）と九カ国条約（中国問題、ベルギー・オランダ・ポルトガル等も含む）の参加国数と対象地域。", "photo": "IMG_4162"}}, {"id": "J36", "subject": "日本史", "unit": "ワシントン体制と軍縮", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4162 / IMG_4164", "question": "ワシントン海軍軍縮条約において定められた、主力艦（戦艦・航空母艦）の保有比率（アメリカ：イギリス：日本）として正しいものはどれですか。", "options": ["5 ： 5 ： 3", "10 ： 10 ： 7", "5 ： 3 ： 1.75", "1 ： 1 ： 1"], "answer": 0, "explanation": {"reason": "米5：英5：日3：仏1.75：伊1.75と規定されました。日本側は対米7割を要求しましたが最終的に6割（5:3）で妥協しました。", "key_point": "ワシントン海軍軍縮条約の主力艦保有比率＝米英5：日3（対米6割）：仏伊1.75。10年間の新造凍結。", "trap": "ロンドン海軍軍縮条約（1930年・補助艦が対米6割9分75厘、約7割）の比率と混同しないようにする。", "photo": "IMG_4162"}}, {"id": "J37", "subject": "日本史", "unit": "ワシントン体制と軍縮", "type": "fillin", "difficulty": "応用", "is_critical": false, "source_photo": "IMG_4164", "question": "ワシントン海軍軍縮条約の決定に従い、八八艦隊計画で建造中だったものの完成直前に廃艦（標的艦として海没処分）となった日本の最新鋭戦艦は何ですか。", "answer": "土佐", "aliases": ["とさ", "戦艦土佐"], "explanation": {"reason": "教科書・ノート資料（IMG_4164）にある通り、軍縮条約の結果、建造中だった大型戦艦「土佐」は解体・廃艦処分となり海没実験に供されました。", "key_point": "軍縮の具体的実例＝戦艦「土佐」の廃棄・解体処分。", "trap": "姉妹艦の「加賀」は空母に改装されましたが、「土佐」は廃艦となりました。", "photo": "IMG_4164"}}, {"id": "J38", "subject": "日本史", "unit": "大正期の社会と文化", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4159", "question": "大正時代末期から世界的に大流行し、日本国内でも約39万人〜45万人の死者を出して社会生活に深刻な打撃を与えた感染症は何ですか。", "options": ["スペインかぜ（インフルエンザ）", "コレラ", "ペスト", "結核"], "answer": 0, "explanation": {"reason": "第一次世界大戦末期の1918年から流行した「スペインかぜ」は、世界で5億人が感染し、日本でも内閣閣僚や一般市民など甚大な死者を出しました。", "key_point": "1918〜1920年の世界的パンデミック＝「スペインかぜ」。第一次世界大戦の終結にも影響。", "trap": "コレラやペストも近代初期に流行しましたが、第一次世界大戦末期の大流行は「スペインかぜ」です。", "photo": "IMG_4159"}}, {"id": "J39", "subject": "日本史", "unit": "大正期の社会と文化", "type": "choice4", "difficulty": "応用", "is_critical": false, "source_photo": "IMG_4159", "question": "大戦景気の中で、ジャーナリストの石橋湛山が『東洋経済新報』などで主張した、植民地（台湾・朝鮮・南満洲）を放棄して平和的な通商国家を目指すべきとする論説は何ですか。", "options": ["小日本主義", "民本主義", "アジア主義", "脱亜論"], "answer": 0, "explanation": {"reason": "石橋湛山は領土拡張主義（大日本主義）を軍事費の浪費・民族的反発を招くだけと批判し、植民地を放棄して経済交流を進める「小日本主義」を提唱しました。", "key_point": "石橋湛山＝「小日本主義」。植民地放棄論と平和的産業立国を説いた。", "trap": "福沢諭吉の「脱亜論」や徳富蘇峰の「平民主義→大日本膨張論」と混同しないようにする。", "photo": "IMG_4159"}}, {"id": "J40", "subject": "日本史", "unit": "大正政変と第1次護憲運動", "type": "sort", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4135 / IMG_4136 / IMG_4137 / IMG_4151 / IMG_4162", "question": "日本史の出来事を年代の古い順に正しく並べ替えなさい。", "options": ["大正政変（桂太郎内閣退陣）", "対華二十一カ条要求の提示", "富山県で米騒動が発生", "ワシントン会議の開催"], "answer": [0, 1, 2, 3], "explanation": {"reason": "大正政変（1913年2月）→ 対華二十一カ条要求（1915年1月）→ 米騒動（1918年7月）→ ワシントン会議（1921年11月）の順です。", "key_point": "年代：大正政変（1913）→ 21カ条要求（1915）→ 米騒動・原敬内閣（1918）→ ワシントン体制（1921-22）。", "trap": "対華21カ条要求と米騒動の前後関係（大戦勃発直後か、大戦末期か）をしっかり整理する。", "photo": "IMG_4151"}}, {"id": "J41", "subject": "日本史", "unit": "大正政変と政党内閣の展開", "type": "fillin", "difficulty": "基本", "is_critical": false, "source_photo": "IMG_4151", "question": "立憲国民党の党首として尾崎行雄とともに第1次護憲運動を指導し、後に首相となって五・一五事件で凶弾に倒れた政治家は誰ですか。", "answer": "犬養毅", "aliases": ["いぬかいつよし", "いぬかい つよし"], "explanation": {"reason": "犬養毅は立憲国民党を率いて尾崎行雄とともに「憲政擁護・閥族打破」を訴え、民衆を先導しました。", "key_point": "犬養毅＝立憲国民党、第1次護憲運動のリーダー。", "trap": "所属政党：尾崎行雄は立憲政友会、犬養毅は立憲国民党。", "photo": "IMG_4151"}}, {"id": "J42", "subject": "日本史", "unit": "大正政変と政党内閣の展開", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4151", "question": "第3次桂太郎内閣が政友会に対抗して組織しようとした新政党は何ですか。", "options": ["立憲同志会", "立憲政友会", "立憲民政党", "憲政本党"], "answer": 0, "explanation": {"reason": "桂太郎は政党勢力に対抗するため自ら新党「立憲同志会」の結成に着手しましたが、結党前に退陣し急死しました（後に加藤高明らが引き継ぐ）。", "key_point": "桂太郎が結成を企図した政党＝立憲同志会（後の憲政会・立憲民政党の源流）。", "trap": "政友会は桂内閣を攻撃した側です。", "photo": "IMG_4151"}}, {"id": "J43", "subject": "日本史", "unit": "大正政変と政党内閣の展開", "type": "tf", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4151", "question": "原敬内閣は、陸軍大臣・海軍大臣・外務大臣を含むすべての閣僚を立憲政友会の党員で固めた。", "answer": false, "explanation": {"reason": "陸相（田中義一）・海相（加藤友三郎）・外相（内田康哉）の3閣僚は軍人・官僚出身の非党員であり、それ以外の全閣僚を政友会党員で構成しました。", "key_point": "本格的政党内閣といえども、陸軍大臣・海軍大臣・外務大臣は非党員（現役武官・職業外交官）が就任した。", "trap": "「すべての閣僚」という極端な記述は誤りです。", "photo": "IMG_4151"}}, {"id": "J44", "subject": "日本史", "unit": "第一次世界大戦と日本の参戦", "type": "choice4", "difficulty": "応用", "is_critical": false, "source_photo": "IMG_4159", "question": "第一次世界大戦中、徳島県の板東俘虜収容所でドイツ人捕虜によって日本で初めて全曲演奏されたベートーヴェンの楽曲は何ですか。", "options": ["交響曲第9番（合唱付き）", "交響曲第5番（運命）", "交響曲第3番（英雄）", "交響曲第6番（田園）"], "answer": 0, "explanation": {"reason": "板東俘虜収容所長・松江豊寿の寛容な処遇のもと、青島戦で捕虜となったドイツ兵オーケストラによって「第九」のアジア初演が行われました。", "key_point": "板東俘虜収容所＝ドイツ兵捕虜と地元住民の交流、ベートーヴェン「第九」の日本初演奏。", "trap": "ノート・教科書の文化史コラム（IMG_4159）で頻出のエピソードです。", "photo": "IMG_4159"}}, {"id": "J45", "subject": "日本史", "unit": "対華二十一カ条要求と日中関係", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4136 / IMG_4153", "question": "対華二十一カ条要求の第3号で日中合弁事業化が要求された、中国最大の鉄鋼コンツェルン（鉱山・製鉄会社）は何ですか。", "options": ["漢冶萍公司", "八幡製鉄所", "鞍山製鉄所", "東亜同文会"], "answer": 0, "explanation": {"reason": "漢陽鉄廠・大冶鉄山・萍郷炭鉱からなる「漢冶萍公司（かんやひょうこうし）」の日中合弁化を要求しました。", "key_point": "対華21カ条要求第3号＝「漢冶萍公司（カンヤヒョウコウシ）」の日中合弁事業化。", "trap": "八幡製鉄所（日本国内の官営製鉄所）に鉄鉱石を供給していた会社です。", "photo": "IMG_4153"}}, {"id": "J46", "subject": "日本史", "unit": "対華二十一カ条要求と日中関係", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4136 / IMG_4153", "question": "対華二十一カ条要求の第2号で、租借期限を99年間に延長することが要求された地域はどこですか。", "options": ["旅順・大連および南満洲鉄道付属地", "青島および膠州湾", "台湾および澎湖諸島", "香港および九龍半島"], "answer": 0, "explanation": {"reason": "旅順・大連の租借期限、および南満洲鉄道（安奉鉄道含む）の利権期限を25年から99年間に延長させました。", "key_point": "第2号＝南満洲・東部内蒙古の権益期限「99年延長」。", "trap": "山東省は第1号、南満洲・東部内蒙古は第2号です。", "photo": "IMG_4153"}}, {"id": "J47", "subject": "日本史", "unit": "シベリア出兵とロシア革命", "type": "fillin", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4145 / IMG_4160", "question": "1925年、日ソ基本条約を締結してソ連と国交を樹立し、北樺太からの日本軍完全撤退を実現した加藤高明内閣の外務大臣は誰ですか。", "answer": "幣原喜重郎", "aliases": ["しではらきじゅうろう", "しではら きじゅうろう"], "explanation": {"reason": "幣原喜重郎外相のいわゆる「幣原外交（協調外交）」により、日ソ基本条約が締結されて両国の国交が樹立し、北樺太の保障占領が解除されました。", "key_point": "1925年日ソ基本条約＝幣原喜重郎外相（加藤高明内閣）。", "trap": "同じ1925年に国内では治安維持法と普通選挙法が制定されたことも超重要です。", "photo": "IMG_4145"}}, {"id": "J48", "subject": "日本史", "unit": "大戦景気と社会変動", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4137 / IMG_4159", "question": "大戦景気期に貿易商社として急成長し、鉄鋼・樟脳・砂糖などの取引や製パン・製粉事業を傘下に収めて三井・三菱を一時脅かした神戸の総合商社はどこですか。", "options": ["鈴木商店", "安田財閥", "岩崎商会", "住友商事"], "answer": 0, "explanation": {"reason": "金子直吉の指導のもとで急成長した「鈴木商店」は船成金の代表格となりましたが、米騒動の際には焼き討ちに遭いました。", "key_point": "鈴木商店＝大戦景気で躍進した新興商社。米騒動で米の買い占め元凶とみなされ本店が焼き討ちされた。", "trap": "米騒動で焼き討ちされた神戸の商店として鈴木商店はテスト頻出。", "photo": "IMG_4159"}}, {"id": "J49", "subject": "日本史", "unit": "大戦景気と社会変動", "type": "tf", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4137 / IMG_4152", "question": "1918年の米騒動では、労働者や民衆の暴動に対して新聞社が批判的な報道を展開したため、政府は新聞記者を弾圧・報道禁止令を出した。", "answer": true, "explanation": {"reason": "寺内内閣は米騒動の激化を隠蔽するため、新聞記事の差し止めや報道禁止を命じ、言論機関や知識人から激しい抗議を受けました（白虹貫日事件など）。", "key_point": "寺内内閣の言論弾圧＝米騒動の報道禁止。", "trap": "報道統制を行ったことが逆に世論の怒りを買い、内閣総辞職に拍車をかけました。", "photo": "IMG_4152"}}, {"id": "J50", "subject": "日本史", "unit": "米騒動と原敬内閣", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4151", "question": "原敬首相が1921年11月、国政の最中に暗殺された場所はどこですか。", "options": ["東京駅丸の内南口", "首相官邸", "国会議事堂", "帝国ホテル"], "answer": 0, "explanation": {"reason": "原敬は関西の政友会大会へ向かう途中に、東京駅改札口前で国鉄職員の中岡艮一に短刀で刺殺されました。", "key_point": "原敬暗殺＝1921年11月、東京駅頭。これにより本格的政党内閣の初代首相が命を落とした。", "trap": "浜口雄幸首相も1930年に東京駅で狙撃されましたが、原敬暗殺（1921年）との場所・人物の区別が問われます。", "photo": "IMG_4151"}}, {"id": "J51", "subject": "日本史", "unit": "大正デモクラシーの思想と運動", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4151", "question": "吉野作造の「民本主義」において、民主主義の理念のうち大日本帝国憲法と矛盾するため留保・排除された考え方はどれですか。", "options": ["主権在民論（国民主権）", "立憲主義", "普通選挙の実施", "議会制民主主義"], "answer": 0, "explanation": {"reason": "大日本帝国憲法第1条で「大日本帝国ハ万世一系ノ天皇之ヲ統治ス」と明記されているため、主権が国民にあるとする「主権在民」を唱えると不敬・憲法違反になるため、主権の所在を問わず政治の目的を民衆に置く「民本主義」としました。", "key_point": "民本主義の本質＝「天皇主権の枠内で、政策の運用を民衆本位にする」。主権在民論を回避した。", "trap": "普通選挙はむしろ民本主義の具体的な実行手段として要求されました。", "photo": "IMG_4151"}}, {"id": "J52", "subject": "日本史", "unit": "大正デモクラシーの思想と運動", "type": "fillin", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4151", "question": "吉野作造が「民本主義」に関する代表的論文『憲政の本義を説いて其の有終の美を済すの途を論ず』を発表した総合雑誌は何ですか。", "answer": "中央公論", "aliases": ["ちゅうおうこうろん"], "explanation": {"reason": "1916年1月号の『中央公論』に掲載されたこの論文が大正デモクラシーの理論的支柱となりました。", "key_point": "吉野作造の論文掲載誌＝『中央公論』（1916年）。", "trap": "『改造』や『東洋経済新報』と混同しないようにする。", "photo": "IMG_4151"}}, {"id": "J53", "subject": "日本史", "unit": "パリ講和会議と日本の外交", "type": "tf", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4141 / IMG_4148", "question": "パリ講和会議の結果結ばれたヴェルサイユ条約により、日本は中国山東省における旧ドイツ権益の継承を認められた。", "answer": true, "explanation": {"reason": "ヴェルサイユ条約第156条でドイツが中国山東省に有していた一切の権利・権益が日本に譲渡されることが明記されました。これに対し中国全土で五四運動が勃発しました。", "key_point": "ヴェルサイユ条約＝山東省旧ドイツ権益の日本継承を承認 → 中国全権の調印拒否・五四運動。", "trap": "「ヴェルサイユ条約で即時中国に返還された」は誤り。返還協定を結んだのは後のワシントン会議（1922年）です。", "photo": "IMG_4141"}}, {"id": "J54", "subject": "日本史", "unit": "パリ講和会議と日本の外交", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4141 / IMG_4161", "question": "国際連盟の設立時、初代事務次長に就任し「新渡戸稲造」が世界に平和の精神を発信しましたが、彼の著書として世界的に有名なものは何ですか。", "options": ["武士道", "代表的日本人", "学問のすすめ", "茶の本"], "answer": 0, "explanation": {"reason": "新渡戸稲造は英語で『Bushido: The Soul of Japan（武士道）』を著し、国際連盟では事務次長として国際協調に多大な貢献をしました。", "key_point": "国際連盟事務次長＝新渡戸稲造（『武士道』）。", "trap": "『代表的日本人』は内村鑑三、『茶の本』は岡倉天心です。", "photo": "IMG_4161"}}, {"id": "J55", "subject": "日本史", "unit": "ワシントン体制と軍縮", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4162", "question": "ワシントン会議で日本側の全権を務め、対米協調を重視して主力艦比率の妥協を成立させた海軍大臣は誰ですか。", "options": ["加藤友三郎", "山本権兵衛", "島村速雄", "東郷平八郎"], "answer": 0, "explanation": {"reason": "加藤友三郎海軍大臣が全権として出席し、「国防は軍人の独占にあらず、国力財力に応じた軍備が必要」として対米6割での軍縮協定をまとめました（後に首相就任）。", "key_point": "ワシントン会議の日本全権＝加藤友三郎（海相）・徳川家達（貴族院議長）・幣原喜重郎（駐米大使）。", "trap": "加藤高明（外相・首相）と加藤友三郎（海相・ワシントン全権）の名字同じトラップに注意。", "photo": "IMG_4162"}}, {"id": "J56", "subject": "日本史", "unit": "大戦景気と社会変動", "type": "choice4", "difficulty": "基本", "is_critical": false, "source_photo": "IMG_4137 / IMG_4164", "question": "大戦景気の好況が一転し、1920年3月に東京株式市場の暴落から始まった不況を何というか。", "options": ["戦後恐慌", "昭和恐慌", "金融恐慌", "世界恐慌"], "answer": 0, "explanation": {"reason": "ヨーロッパ諸国の生産力回復に伴い輸出が急減し、1920年春に生糸・綿糸価格の暴落から「戦後恐慌」が発生しました。", "key_point": "第一次世界大戦後の恐慌の流れ：戦後恐慌（1920）→ 震災恐慌（1923）→ 金融恐慌（1927）→ 昭和恐慌（1930）。", "trap": "大戦景気の直後に来たのは「戦後恐慌」です。金融恐慌や昭和恐慌と時期を混同しないこと。", "photo": "IMG_4137"}}, {"id": "J57", "subject": "日本史", "unit": "大正政変と政党内閣の展開", "type": "tf", "difficulty": "基本", "is_critical": false, "source_photo": "IMG_4151", "question": "原敬内閣の次に内閣を組織したのは、政友会を引き継いだ高橋是清内閣である。", "answer": true, "explanation": {"reason": "原敬暗殺後、政友会総裁と首相を引き継いだのは蔵相の高橋是清でした（しかし党内対立で短期間で退陣）。", "key_point": "原敬内閣（1918-1921）→ 高橋是清内閣（1921-1922）。どちらも立憲政友会内閣。", "trap": "高橋是清は蔵相として有名ですが、この時期に首相も務めました。", "photo": "IMG_4151"}}, {"id": "J58", "subject": "日本史", "unit": "大正デモクラシーの思想と運動", "type": "fillin", "difficulty": "応用", "is_critical": false, "source_photo": "IMG_4151", "question": "吉野作造の民本主義において、政治運用の二大目標として掲げられたのは「普通選挙の実施」と何の内閣制の確立ですか。", "answer": "政党内閣", "aliases": ["政党内閣制", "立憲的政党内閣"], "explanation": {"reason": "吉野作造は主権の所在にとらわれず民意を反映させる具体的方策として「普通選挙の実施」と「議会多数派による政党内閣の確立」を主張しました。", "key_point": "民本主義の具体的要件＝①普通選挙、②政党内閣制。", "trap": "「超然内閣」の正反対の概念です。", "photo": "IMG_4151"}}, {"id": "J59", "subject": "日本史", "unit": "第一次世界大戦と日本の参戦", "type": "sort", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4136 / IMG_4141 / IMG_4145 / IMG_4162", "question": "第一次世界大戦前後の日本の対外関係を古い順に正しく並べ替えなさい。", "options": ["ドイツへの宣戦布告と青島占領", "石井・ランシング協定の締結", "シベリア出兵の開始", "ワシントン海軍軍縮条約の調印"], "answer": [0, 1, 2, 3], "explanation": {"reason": "宣戦布告・青島占領（1914年）→ 石井・ランシング協定（1917年）→ シベリア出兵（1918年）→ ワシントン海軍軍縮条約（1922年）の順です。", "key_point": "1914参戦 → 1915対華21カ条 → 1917石井ランシング → 1918シベリア → 1921-22ワシントン会議。", "trap": "石井・ランシング協定（アメリカ参戦の年・1917）とシベリア出兵（ロシア内戦介入・1918）の順番。", "photo": "IMG_4141"}}, {"id": "J60", "subject": "日本史", "unit": "大戦景気と社会変動", "type": "choice4", "difficulty": "応用", "is_critical": false, "source_photo": "IMG_4137 / IMG_4152", "question": "1918年の米騒動が全国に波及した規模として、教科書や授業ノートで記録されている数値として最も近いものはどれですか。", "options": ["1道3府37県の700カ所以上", "富山県と東京都の2カ所のみ", "全国で約10カ所程度", "北海道と東北地方のみ"], "answer": 0, "explanation": {"reason": "米騒動は富山から始まり、京都・大阪・名古屋・東京、さらに炭鉱や鉱山へと広がり、1道3府37県の700カ所以上、数百万人規模の民衆が参加した未曾有の暴動となりました。", "key_point": "米騒動の規模＝全国30以上の府県・700カ所以上に波及。", "trap": "単なる地方の一揆ではなく、全国的な民衆蜂起となったため寺内内閣が崩壊しました。", "photo": "IMG_4152"}}, {"id": "W01", "subject": "世界史", "unit": "帝国主義の対立と第一次世界大戦の背景", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4133 / IMG_4154", "question": "ドイツ皇帝ヴィルヘルム2世が進めた、ベルリン・ビザンティウム（イスタンブル）・バグダードを結ぶ帝国主義政策を何政策というか。", "options": ["3B政策", "3C政策", "東方問題", "ビスマルク体制"], "answer": 0, "explanation": {"reason": "ベルリン（Berlin）、ビザンティウム（Byzantium）、バグダード（Baghdad）の頭文字をとった「3B政策」により、中東・湾岸地域への進出とバグダード鉄道建設を推進しました。", "key_point": "ドイツの「3B政策」 vs イギリスの「3C政策（カイロ・ケープタウン・カルカッタ）」。", "trap": "イギリスの3C政策（Cairo, Cape Town, Calcutta）との混同に注意。ドイツは3Bです。", "photo": "IMG_4154"}}, {"id": "W02", "subject": "世界史", "unit": "帝国主義の対立と第一次世界大戦の背景", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4133 / IMG_4154", "question": "イギリスがアフリカ縦断政策とインド支配を結びつけて推進した、カイロ・ケープタウン・カルカッタを結ぶ政策を何政策というか。", "answer": "3C政策", "aliases": ["サンシー政策", "3c政策", "３C政策"], "explanation": {"reason": "カイロ（Cairo）、ケープタウン（Cape Town）、カルカッタ（Calcutta）を結びつけ、エジプト・南アフリカ・インドを結ぶ帝国連鎖を構築しようとした政策です。", "key_point": "イギリス＝3C政策。ドイツの3B政策と中東・ペルシア湾岸で真っ向から衝突した。", "trap": "3つの都市名（カイロ・ケープタウン・カルカッタ）を正確に答えさせる問題も頻出。", "photo": "IMG_4154"}}, {"id": "W03", "subject": "世界史", "unit": "帝国主義の対立と第一次世界大戦の背景", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4133 / IMG_4158", "question": "第一次世界大戦直前のヨーロッパで対立した「三国協商」の構成国として正しい組み合わせはどれですか。", "options": ["イギリス・フランス・ロシア", "ドイツ・オーストリア・イタリア", "ドイツ・オーストリア・オスマン帝国", "イギリス・アメリカ・フランス"], "answer": 0, "explanation": {"reason": "三国同盟（独・墺・伊）に対抗して、露仏同盟（1891-94）、英仏協商（1904）、英露協商（1907）によって「三国協商（英・仏・露）」が完成しました。", "key_point": "三国同盟＝独・墺・伊（後に伊は離脱） vs 三国協商＝英・仏・露。", "trap": "イタリアは三国同盟側としてスタートした（大戦勃発後に連合国側へ寝返る）点に注意。", "photo": "IMG_4158"}}, {"id": "W04", "subject": "世界史", "unit": "帝国主義の対立と第一次世界大戦の背景", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4133 / IMG_4158", "question": "複雑な民族・宗教問題と列強の利害が交錯し、「ヨーロッパの火薬庫」と呼ばれた地域はどこですか。", "options": ["バルカン半島", "イベリア半島", "スカンディナヴィア半島", "クリミア半島"], "answer": 0, "explanation": {"reason": "オスマン帝国の衰退に伴い民族独立の動きが活発化し、パン・スラヴ主義（ロシア・セルビア）とパン・ゲルマン主義（オーストリア・ドイツ）が衝突したバルカン半島が「ヨーロッパの火薬庫」と呼ばれました。", "key_point": "「ヨーロッパの火薬庫」＝バルカン半島。第一次世界大戦の直接の導火線となった。", "trap": "クリミア半島（クリミア戦争の舞台）とバルカン半島を混同しないようにする。", "photo": "IMG_4133"}}, {"id": "W05", "subject": "世界史", "unit": "帝国主義の対立と第一次世界大戦の背景", "type": "tf", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4133 / IMG_4158", "question": "1913年の第2次バルカン戦争は、オスマン帝国から獲得したマケドニアの領有配分をめぐり、ブルガリアがセルビア・ギリシア・ルーマニア・オスマン帝国と戦って敗北した戦争である。", "answer": true, "explanation": {"reason": "第1次バルカン戦争（1912年・バルカン同盟 vs オスマン）で勝利後、領土配分に不満を持つブルガリアが元同盟国のセルビア・ギリシアを攻撃して孤立・敗北しました。その結果、ブルガリアは三国同盟（独墺）側へ接近しました。", "key_point": "第1次バルカン戦争＝バルカン同盟（露が後援） vs オスマン帝国。第2次バルカン戦争＝ブルガリア vs セルビア・ギリシア・ルーマニア・オスマン。", "trap": "第1次と第2次の敵味方の変化（ブルガリアの孤立と敗北）は整序・正誤の頻出テーマです。", "photo": "IMG_4133"}}, {"id": "W06", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4134 / IMG_4158", "question": "1914年6月28日、ボスニアの州都でオーストリア皇太子夫妻がセルビア人青年に暗殺され、第一次世界大戦の直接の契機となった事件を何というか。", "answer": "サラエボ事件", "aliases": ["サライェヴォ事件", "サライエボ事件", "サラエヴォ事件"], "explanation": {"reason": "オーストリア皇太子フランツ・フェルディナント夫妻が、セルビアの民族主義組織に属する青年プリンツィプに暗殺されました。", "key_point": "サラエボ事件（1914.6.28）＝第一次世界大戦の導火線。オーストリアがセルビアに宣戦布告。", "trap": "暗殺された場所：サラエボ（ボスニアの州都）。セルビア国内で暗殺されたわけではありません。", "photo": "IMG_4158"}}, {"id": "W07", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4134", "question": "開戦当初、ドイツ軍が中立国ベルギーを侵犯してフランスを急襲・早期打倒し、その後ロシアに対処しようとした作戦計画を何というか。", "options": ["シュリーフェン・プラン", "バルバロッサ作戦", "モルトケ計画", "ビスマルク・プラン"], "answer": 0, "explanation": {"reason": "参謀総長シュリーフェンが立案した計画で、ベルギーを通過してパリを包囲する短期決戦を狙いましたが、マルヌの戦いで阻止され失敗しました。", "key_point": "シュリーフェン・プラン＝対仏速戦即決作戦。ベルギー中立侵犯がイギリス参戦の直接の理由となった。", "trap": "バルバロッサ作戦は第二次世界大戦の独ソ戦の作戦名です。", "photo": "IMG_4134"}}, {"id": "W08", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4134 / IMG_4158", "question": "西部戦線でドイツ軍の進撃をフランス・イギリス連合軍が食い止め、シュリーフェン・プランを挫折させて以後の泥沼の塹壕戦に突入させた1914年9月の戦いは何ですか。", "options": ["マルヌの戦い", "タンネンベルクの戦い", "ソンムの戦い", "ヴェルダンの戦い"], "answer": 0, "explanation": {"reason": "マルヌの戦い（マルヌの奇跡）によりドイツの電撃作戦は挫折し、スイス国境から北海に至る塹壕戦（長期戦）へと移行しました。", "key_point": "マルヌの戦い（1914）＝西部戦線でのドイツの短期決戦挫折、塹壕戦への移行。", "trap": "タンネンベルクの戦いは東部戦線でヒンデンブルク率いるドイツ軍がロシア軍を壊滅させた戦いです。", "photo": "IMG_4134"}}, {"id": "W09", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4134 / IMG_4158", "question": "第一次世界大戦で初めて実戦投入・大規模使用された新兵器として誤っているものはどれですか。", "options": ["核兵器（原子爆弾）", "毒ガス", "戦車（タンク）", "潜水艦（Uボート）"], "answer": 0, "explanation": {"reason": "第一次世界大戦では毒ガス（イーペルの戦い）、戦車（ソンムの戦い）、飛行機、潜水艦、機関銃が猛威を振るいました。原子爆弾が使用されたのは第二次世界大戦末期です。", "key_point": "第一次世界大戦の新兵器：毒ガス、戦車、飛行機、潜水艦、火炎放射器、機関銃。", "trap": "ソンムの戦い＝戦車の初投入、イーペルの戦い＝毒ガスの初使用という戦場と兵器の対応も重要。", "photo": "IMG_4158"}}, {"id": "W10", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "fillin", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4158", "question": "三国同盟に属していたイタリアが、連合国側と結んだ秘密条約により大戦中に同盟を離脱してオーストリアに宣戦布告した1915年の条約は何ですか。", "answer": "ロンドン秘密条約", "aliases": ["ロンドン密約", "ロンドン条約"], "explanation": {"reason": "イギリス・フランスはイタリアに対し、戦後にオーストリア領内の「未回収のイタリア（南チロル・トリエステなど）」を割譲することを約束して寝返らせました。", "key_point": "イタリアの寝返り＝1915年「ロンドン秘密条約」。目的は「未回収のイタリア」領有。", "trap": "イタリアは最初三国同盟でしたが、中立宣言の後、連合国側で参戦しました。", "photo": "IMG_4158"}}, {"id": "W11", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4134 / IMG_4159", "question": "1917年4月、アメリカ合衆国が第一次世界大戦に連合国側として参戦した直接のきっかけとなったドイツの作戦は何ですか。", "options": ["無制限潜水艦作戦", "シュリーフェン作戦", "ゼーレーヴェ作戦", "焦土作戦"], "answer": 0, "explanation": {"reason": "イギリスの海上封鎖に対抗してドイツが宣言した「無制限潜水艦作戦」（指定海域内のすべての船舶を無警告で撃沈）により中立国アメリカの民間船被害が相次ぎ、米参戦の決め手となりました。", "key_point": "アメリカ参戦（1917年）の理由＝「無制限潜水艦作戦の再開」＋「ツィンメルマン電報事件」。", "trap": "ルシタニア号事件（1915年）は対米感情を悪化させましたが、直接参戦したのは1917年の無制限潜水艦作戦再開時です。", "photo": "IMG_4159"}}, {"id": "W12", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "fillin", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4134 / IMG_4159", "question": "1918年11月、出撃命令を拒絶した水兵の反乱が口火となってドイツ革命が勃発した軍港はどこですか。", "answer": "キール", "aliases": ["キール軍港", "キール港"], "explanation": {"reason": "キール軍港の水兵反乱から労働者・兵士の蜂起（レーテ形成）が全国へ広がり、皇帝ヴィルヘルム2世はオランダへ亡命してドイツ共和国が樹立されました。", "key_point": "ドイツ革命の発端＝「キール軍港の水兵反乱（1918年11月）」。皇帝亡命 → 1918.11.11 休戦協定調印。", "trap": "水兵反乱の地名「キール」は一問一答の頻出語句です。", "photo": "IMG_4159"}}, {"id": "W13", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "tf", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4143 / IMG_4153 / IMG_4164", "question": "第一次世界大戦の総力戦体制において、多くの女性が軍需工場や交通機関などの銃後労働に従事したことは、戦後のイギリスやアメリカにおける女性参政権の獲得につながった。", "answer": true, "explanation": {"reason": "総力戦において女性が男性に代わって生産活動を支えた実績が高く評価され、イギリス（1918年第4次選挙法改正で30歳以上女性）、ドイツ（ワイマール憲法）、アメリカ（憲法修正第19条）で女性参政権が実現しました。", "key_point": "総力戦体制の影響＝「女性の社会進出・銃後労働 → 戦後の女性参政権獲得」。", "trap": "ウィルソン大統領自身も議会演説で女性の献身を称え参政権付与を後押ししました（IMG_4153）。", "photo": "IMG_4153"}}, {"id": "W14", "subject": "世界史", "unit": "ロシア革命とソ連の成立", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4138 / IMG_4160", "question": "1917年3月（ロシア暦2月）のロシア二月革命の結果として正しいものはどれですか。", "options": ["ニコライ2世が退位し、約300年続いたロマノフ朝が滅亡した", "レーニンが指導するボリシェヴィキが単独で社会主義政権を樹立した", "第一次世界大戦から即時に無条件完全離脱した", "スターリンが最高指導者として五カ年計画を開始した"], "answer": 0, "explanation": {"reason": "ペトログラードでの食糧不足に抗議する女性労働者のデモから兵士の反乱へ拡大し、皇帝ニコライ2世が退位してロマノフ朝は滅亡しました。その後、自由主義的臨時政府と労働者・兵士のソヴィエトによる「二重権力状態」が生じました。", "key_point": "二月革命（1917.3）＝ロマノフ朝滅亡、臨時政府とソヴィエトの二重権力状態。", "trap": "社会主義政権の樹立は11月の「十月革命」です。二月革命では臨時政府（ブルジョワ・自由主義派）が成立しました。", "photo": "IMG_4160"}}, {"id": "W15", "subject": "世界史", "unit": "ロシア革命とソ連の成立", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4138 / IMG_4160", "question": "亡命先のスイスから封印列車で帰国したレーニンが発表し、「すべての権力をソヴィエトへ」と訴えて革命の継続を主張した方針を何というか。", "answer": "四月テーゼ", "aliases": ["4月テーゼ", "しがつテーゼ"], "explanation": {"reason": "1917年4月に帰国したレーニンは、戦争継続を主張する臨時政府を批判し、第二段階の社会主義革命への移行を唱える「四月テーゼ」を発表しました。", "key_point": "レーニン＝「四月テーゼ」。「すべての権力をソヴィエトへ」「帝国主義戦争の即時停止」。", "trap": "「平和に関する布告」は十月革命直後の布告であり、帰国直後の方針表明は「四月テーゼ」です。", "photo": "IMG_4160"}}, {"id": "W16", "subject": "世界史", "unit": "ロシア革命とソ連の成立", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4138 / IMG_4160", "question": "1917年11月（ロシア暦10月）の十月革命で樹立されたソヴィエト政権が直ちに出した「平和に関する布告」の3大原則はどれですか。", "options": ["無併合・無賠償・民族自決", "秘密外交の推進・勢力均衡・集団安全保障", "即時停戦・賠償金支払・領土分割", "現状維持・委任統治・門戸開放"], "answer": 0, "explanation": {"reason": "レーニンはすべての交戦国に対し、「無併合・無賠償・民族自決（民族自決権の承認）」に基づく即時講和を呼びかけました。", "key_point": "平和に関する布告の原則＝「無併合・無賠償・民族自決」。ウィルソンの「十四か条」にも強い影響を与えた。", "trap": "ウィルソンの「十四か条」とレーニンの「平和に関する布告」の共通点と差異を把握しておくこと。", "photo": "IMG_4138"}}, {"id": "W17", "subject": "世界史", "unit": "ロシア革命とソ連の成立", "type": "fillin", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4138 / IMG_4147 / IMG_4160", "question": "1918年3月、ソヴィエト政権が国内の経済復興と政権防衛を優先し、広大な領土割譲という過酷な条件を飲んでドイツと単独調印した講和条約は何ですか。", "answer": "ブレスト・リトフスク条約", "aliases": ["ブレストリトフスク条約", "ブレスト＝リトフスク条約"], "explanation": {"reason": "トロツキーらの反対を抑えてレーニンが推進し、ポーランド・バルト海沿岸・ウクライナなどの領有権を放棄してドイツと単独講和を成立させました。", "key_point": "ブレスト・リトフスク条約（1918.3）＝独露単独講和。ロシアの第一次世界大戦離脱。", "trap": "この単独講和によって連合国は激怒し、対ソ干渉戦争（シベリア出兵など）を仕掛ける契機となりました。", "photo": "IMG_4147"}}, {"id": "W18", "subject": "世界史", "unit": "ロシア革命とソ連の成立", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4138 / IMG_4160", "question": "内戦と外国の干渉戦争に対抗するためソヴィエト政府が実施した「戦時共産主義」の内容として適切なものはどれですか。", "options": ["農民からの穀物強制徴発と全企業の国有化", "余剰農産物の自由販売の許可と外国資本の導入", "富農（クラーク）の保護と市場経済の全面導入", "コルホーズ・ソフホーズによる集団農業の完成"], "answer": 0, "explanation": {"reason": "戦時共産主義では、食糧の強制徴発、私的商業の禁止、工業の国有化、労働義務制が敷かれ、都市の飢餓と農民の激しい反発（クロンシュタット水兵反乱など）を招きました。", "key_point": "戦時共産主義＝穀物強制徴発・私企業国有化 → 生産意欲低下・飢饉 → ネップ（新経済政策）へ転換。", "trap": "自由販売の許可は次の「ネップ（新経済政策）」の内容です。", "photo": "IMG_4160"}}, {"id": "W19", "subject": "世界史", "unit": "ロシア革命とソ連の成立", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4138 / IMG_4160", "question": "1921年、経済疲弊と農民の反発を受けてレーニンが導入した、農民の余剰農産物の自由販売や中小企業の私有を認めた政策を何というか。略称（アルファベット）または日本語で答えなさい。", "answer": "NEP", "aliases": ["ネップ", "新経済政策", "nep"], "explanation": {"reason": "NEP（Novaya Ekonomicheskaya Politika：新経済政策）により、市場経済と部分的な資本主義の復活を認め、疲弊したソ連経済を急速に回復させました。", "key_point": "NEP（新経済政策・1921）＝食糧現物税納入後の「余剰農産物の自由販売を容認」。", "trap": "戦時共産主義（統制・徴発）からNEP（一部自由化）への転換は論述・正誤の頻出テーマ。", "photo": "IMG_4160"}}, {"id": "W20", "subject": "世界史", "unit": "ロシア革命とソ連の成立", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4138 / IMG_4160", "question": "1922年にロシア、ウクライナ、ベラルーシ、ザカフカースの4社会主義共和国が合邦して結成された世界初の社会主義国家は何ですか。", "options": ["ソヴィエト社会主義共和国連邦（ソ連）", "ロシア連邦", "独立国家共同体（CIS）", "汎スラヴ連邦"], "answer": 0, "explanation": {"reason": "1922年末に第1回全連邦ソヴィエト大会が開かれ、ソヴィエト社会主義共和国連邦（USSR / ソ連）が正式に成立しました。", "key_point": "1922年＝ソヴィエト社会主義共和国連邦（ソ連）の成立。初代指導者はレーニン。", "trap": "成立年（1922年）と最初の加盟4共和国を押さえておく。", "photo": "IMG_4160"}}, {"id": "W21", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4139 / IMG_4153", "question": "1918年1月にアメリカ大統領ウィルソンが発表し、パリ講和会議の基本原則となった平和原則は何ですか。", "options": ["十四か条の平和原則", "大西洋憲章", "トルーマン・ドクトリン", "門戸開放宣言"], "answer": 0, "explanation": {"reason": "秘密外交の廃止、海洋の自由、軍備縮小、民族自決、国際連盟の創設などを掲げたウィルソンの「十四か条」が講和の基礎となりました。", "key_point": "ウィルソンの「十四か条」＝民族自決、秘密外交廃止、国際平和機構（国際連盟）の設立。", "trap": "「民族自決」は東欧の敗戦国（オーストリア・ロシア・オスマン等）の旧支配地域にのみ適用され、アジア・アフリカの植民地には適用されませんでした。", "photo": "IMG_4153"}}, {"id": "W22", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4139 / IMG_4148 / IMG_4153", "question": "1919年のヴェルサイユ条約でドイツに課された条件として誤っているものはどれですか。", "options": ["ドイツの領土を東ドイツと西ドイツの2国家に分割した", "アルザス・ロレーヌをフランスに返還した", "すべての海外植民地を放棄させられた", "1320億金マルクという巨額の賠償金支払いを課された"], "answer": 0, "explanation": {"reason": "東西ドイツへの国家分割は第二次世界大戦後の冷戦期（1949年）の出来事です。ヴェルサイユ条約ではアルザス・ロレーヌ返還、ポーランド回廊の割譲、軍備制限（徴兵制廃止・陸軍10万人以下）、ラインラント非武装などが課されました。", "key_point": "ヴェルサイユ条約の対独過酷条項：領土削減、植民地没収、軍備制限、第231条戦争責任条項、巨額賠償金。", "trap": "第一次世界大戦後と第二次世界大戦後のドイツの処分（東西分割）を混同させる典型的な選択肢。", "photo": "IMG_4148"}}, {"id": "W23", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "fillin", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4139 / IMG_4148", "question": "第一次世界大戦の講和条約で、連合国とオーストリアとの間で結ばれ、領土縮小と帝国解体を決定した条約は何ですか。", "answer": "サン・ジェルマン条約", "aliases": ["サンジェルマン条約", "サン＝ジェルマン条約"], "explanation": {"reason": "オーストリアとはサン・ジェルマン条約が結ばれ、チェコスロバキアやポーランドの独立承認、ハンガリーとの分離、ドイツとの合邦禁止などが定められました。", "key_point": "講和条約の対応：ドイツ＝ヴェルサイユ、オーストリア＝サン・ジェルマン、ハンガリー＝トリアノン、ブルガリア＝ヌイイ、オスマン＝セーヴル。", "trap": "敗戦国ごとの条約名の一致は定期テストの超頻出問題です。", "photo": "IMG_4148"}}, {"id": "W24", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4148", "question": "第一次世界大戦後の講和条約と相手国の組み合わせとして正しいものはどれですか。", "options": ["ハンガリー ― トリアノン条約", "ブルガリア ― セーヴル条約", "オスマン帝国 ― ヌイイ条約", "オーストリア ― ローザンヌ条約"], "answer": 0, "explanation": {"reason": "ハンガリー＝トリアノン条約、ブルガリア＝ヌイイ条約、オスマン帝国＝セーヴル条約（後にトルコ革命でローザンヌ条約に改定）、オーストリア＝サン・ジェルマン条約です。", "key_point": "「墺＝サンジェルマン、洪＝トリアノン、ブル＝ヌイイ、土＝セーヴル」と語呂合わせなどで覚える。", "trap": "国名と条約名の組み合わせシャッフル問題の対策を徹底する。", "photo": "IMG_4148"}}, {"id": "W25", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4140 / IMG_4161 / IMG_4164", "question": "1920年に発足した国際連盟の構造的欠陥・弱点として誤っているものはどれですか。", "options": ["侵略国に対して強力な国連軍を派遣できる軍事制裁規定があった", "提唱国であるアメリカ合衆国が議会（上院）の反対により不参加となった", "総会や理事会での意思決定に「全会一致」の原則が採られていた", "ドイツや社会主義国のソ連が発足当初に加盟を認められなかった"], "answer": 0, "explanation": {"reason": "国際連盟には独自の軍事力（軍備・国連軍）がなく、侵略に対する制裁手段は経済制裁に限られていました。軍事制裁規定（国連軍）が設けられたのは第二次世界大戦後の「国際連合」です。", "key_point": "国際連盟の3大弱点：①米の不参加、②全会一致の原則（迅速な決定不可）、③軍事制裁手段の欠如（経済制裁のみ）。", "trap": "国際連盟（League of Nations）と国際連合（United Nations）の制度的差異は正誤判定の最重要ポイント。", "photo": "IMG_4161"}}, {"id": "W26", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4140 / IMG_4161", "question": "国際連盟の本部が置かれたスイスの都市はどこですか。", "answer": "ジュネーヴ", "aliases": ["ジュネーブ", "ジュネブ"], "explanation": {"reason": "永世中立国スイスの都市ジュネーヴに国際連盟本部が設置されました。", "key_point": "国際連盟の本部＝ジュネーヴ。（現在の国際連合本部はニューヨーク）。", "trap": "チューリヒやベルンではなく「ジュネーヴ」です。", "photo": "IMG_4140"}}, {"id": "W27", "subject": "世界史", "unit": "辛亥革命と中華民国の成立", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4135 / IMG_4156", "question": "1905年に孫文が東京で諸団体を統合して結成した、三民主義を綱領とする革命組織は何ですか。", "options": ["中国同盟会", "興中会", "光復会", "中国国民党"], "answer": 0, "explanation": {"reason": "孫文は東京で興中会、華興会、光復会などを結集して「中国同盟会」を結成し、「駆除 make 満、回復中華、創立民国、平均地権」を掲げました。", "key_point": "孫文＝1894年興中会（ハワイ） → 1905年中国同盟会（東京） → 1919年中国国民党。", "trap": "結成場所が「東京」である点も重要。宮崎滔天や梅屋庄吉ら日本人有志も支援しました。", "photo": "IMG_4156"}}, {"id": "W28", "subject": "世界史", "unit": "辛亥革命と中華民国の成立", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4135 / IMG_4156", "question": "孫文が提唱した革命の基本指導理念で、「民族・民権・何」から構成される思想ですか。漢字2字で答えなさい。", "answer": "民生", "aliases": ["みんせい", "民生主義"], "explanation": {"reason": "孫文の「三民主義」は、民族の独立（民族主義）、民主政治の実現（民権主義）、生活の安定・地権平均（民生主義）の3本柱からなります。", "key_point": "三民主義＝「民族・民権・民生」。", "trap": "「民生」を「民衆」や「民本」と書き間違えるミスが多発します。", "photo": "IMG_4156"}}, {"id": "W29", "subject": "世界史", "unit": "辛亥革命と中華民国の成立", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4135 / IMG_4156", "question": "1911年10月10日、四川暴動を契機として新軍の兵士が蜂起し、辛亥革命の発端となった都市はどこですか。", "options": ["武昌", "南京", "北京", "広州"], "answer": 0, "explanation": {"reason": "清政府の幹線鉄道国有化令に対する四川での保路運動（反対暴動）を鎮圧するため軍が派遣された隙を突き、湖北省の武昌（現在の武漢市）で新軍革命派が蜂起しました。", "key_point": "辛亥革命の発端＝1911年10月10日「武昌蜂起（武漢）」。中華民国の「双十節」。", "trap": "中華民国の臨時政府が置かれたのは「南京」、清朝の都は「北京」、蜂起は「武昌」です。", "photo": "IMG_4156"}}, {"id": "W30", "subject": "世界史", "unit": "辛亥革命と中華民国の成立", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4135 / IMG_4156", "question": "中華民国の成立後、孫文から臨時大総統の地位を譲り受けたものの、議会を弾圧して独裁政治を行い、自ら皇帝になろうとして失脚・急死した北洋軍閥の首領は誰ですか。", "options": ["袁世凱", "段祺瑞", "張作霖", "蒋介石"], "answer": 0, "explanation": {"reason": "袁世凱は清の皇帝（宣統帝溥儀）を退位させる見返りに大総統に就任しましたが、国民党幹部（宋教仁）を暗殺し、帝政復活を企てて全国の反発を浴びて病死しました。", "key_point": "袁世凱＝清朝打倒の功績で大総統就任 → 独裁・帝政復活失敗。対華21カ条要求を受諾した人物。", "trap": "宣統帝溥儀を退位させて清朝を滅亡させた人物であることも確認。", "photo": "IMG_4156"}}, {"id": "W31", "subject": "世界史", "unit": "中国の新文化運動と五四運動", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4150 / IMG_4163", "question": "陳独秀が1915年に上海で『青年雑誌』として創刊し、1916年（第2巻）に改題して儒教道徳の打破や民主と科学を唱え、中国新文化運動の中心となった雑誌は何ですか。", "answer": "新青年", "aliases": ["しんせいねん", "『新青年』"], "explanation": {"reason": "陳独秀が1915年9月に上海で創刊した当初の誌名は『青年雑誌』でしたが、1916年9月の第2巻第1号より『新青年』と改題されました。「デモクラシー（徳先生）」と「サイエンス（賽先生）」を旗印に、封建的な儒教道徳を痛烈に批判しました。", "key_point": "創刊年＝1915年（当初『青年雑誌』 → 1916年『新青年』へ改題）。陳独秀主宰、胡適（白話運動）や魯迅（『狂人日記』）が執筆。", "trap": "創刊年が1915年、改題が1916年である点、また後に陳独秀が1921年に中国共産党を結成する流れを押さえておく。", "photo": "IMG_4150"}}, {"id": "W32", "subject": "世界史", "unit": "中国の新文化運動と五四運動", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4150 / IMG_4163", "question": "『新青年』に「狂人日記」や「阿Q正伝」を発表し、旧社会の封建的陋習や奴隷根性を痛烈に批判した中国近代文学の先駆者は誰ですか。", "options": ["魯迅", "胡適", "李大釗", "郭沫若"], "answer": 0, "explanation": {"reason": "魯迅（ろじん）は白話（口語）で「狂人日記」を書き、儒教社会の「礼教が人を食う」実態を糾弾し、「阿Q正伝」で精神勝利法に安住する民衆の遅れを鋭く描きました。", "key_point": "魯迅＝白話小説『狂人日記』『阿Q正伝』。文学革命の旗手。 ※『新青年』は1915年に陳独秀が『青年雑誌』として創刊し、1916年に改題された雑誌。", "trap": "白話文学を理論的に提唱したのは胡適（文学改良芻議）、実際に名作小説を生み出したのは魯迅です。", "photo": "IMG_4150"}}, {"id": "W33", "subject": "世界史", "unit": "中国の新文化運動と五四運動", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4140 / IMG_4150 / IMG_4163", "question": "1919年5月4日、北京の学生デモから全国に拡大した反帝国主義・反封建主義の大衆運動（五四運動）の直接の契機は何ですか。", "options": ["パリ講和会議で山東省の旧ドイツ権益が日本に譲渡されたこと", "袁世凱が皇帝に即位したこと", "満州事変が勃発したこと", "イギリス軍がアムリットサールで虐殺を行ったこと"], "answer": 0, "explanation": {"reason": "パリ講和会議で中国の二十一カ条要求撤廃・山東権益返還要求が退けられ、日本への権益継承が決定したことに激怒した北京大学の学生らが天安門広場に結集しました。", "key_point": "五四運動（1919年5月4日）＝パリ講和条約での山東問題決定に抗議。親日派高官（曹汝霖ら）糾弾、日本製品ボイコット、中国代表団のヴェルサイユ条約調印拒否。", "trap": "運動の結果、中国代表団がヴェルサイユ条約への「調印を拒否」した点も重要です。", "photo": "IMG_4150"}}, {"id": "W34", "subject": "世界史", "unit": "朝鮮の民族運動", "type": "fillin", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4150 / IMG_4163", "question": "1919年3月1日、ソウルのタプコル（パゴダ）公園での独立宣言書朗読を皮切りに全土へ広がった朝鮮の大規模な民族独立運動を何というか。", "answer": "三・一独立運動", "aliases": ["三一独立運動", "3・1独立運動", "3.1独立運動", "さんいちどくりつうんどう"], "explanation": {"reason": "高宗（前皇帝）の急死やウィルソンの民族自決主義に刺激され、「万歳（マンセー）」を叫んで全国民的な非暴力デモが巻き起こりました。", "key_point": "三・一独立運動（1919.3.1）＝朝鮮全土の独立運動。柳寛順（ユ・グァンスン）らの象徴的指導者。", "trap": "中国の五四運動（1919.5.4）と朝鮮の三・一独立運動（1919.3.1）は同年です。順序は三・一運動が先です。", "photo": "IMG_4150"}}, {"id": "W35", "subject": "世界史", "unit": "朝鮮の民族運動", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4150 / IMG_4163", "question": "三・一独立運動の激化に直面した日本の朝鮮総督府（斎藤実総督）が行った統治方針の転換として正しいものはどれですか。", "options": ["武断政治から、憲兵警察の廃止や一部言論を認める「文化政治」へ転換した", "朝鮮総督府を完全に廃止し、朝鮮の完全独立を認めた", "さらに弾圧を強め、軍政を敷いて一般警察を全廃した", "創氏改名と皇民化教育を直ちに全土で強制した"], "answer": 0, "explanation": {"reason": "武力で抑え込む「武断政治」の限界を悟り、憲兵警察制度を普通警察に改め、ハングル新聞の発行や初等教育の普及を認めるなど懐柔を図る「文化政治」へと方針を転換しました。", "key_point": "統治の転換：武断政治（1910〜） → 文化政治（1919〜）。斎藤実海軍大将が総督就任。", "trap": "文化政治も本質的には民族分断と親日派育成を狙うものでした。完全独立を認めたわけではありません。", "photo": "IMG_4150"}}, {"id": "W36", "subject": "世界史", "unit": "イギリスの中東三枚舌外交", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4138 / IMG_4149", "question": "第一次世界大戦中にイギリスが中東地域で結んだ協定・宣言のうち、フランス・ロシアとオスマン帝国領の分割を秘密裏に取り決めたものはどれですか。", "options": ["サイクス・ピコ協定", "フサイン・マクマホン協定", "バルフォア宣言", "セーヴル条約"], "answer": 0, "explanation": {"reason": "1916年のサイクス・ピコ協定で、イギリス・フランス・ロシアは中東（シリア・イラク・パレスチナ等）の勢力圏分割を密約しました（十月革命後にロシア新政権が暴露）。", "key_point": "イギリス中東三枚舌外交：①フサイン・マクマホン協定（アラブ独立約束）、②サイクス・ピコ協定（英仏露の中東分割密約）、③バルフォア宣言（ユダヤ人民族的郷土建設支持）。民族的郷土とアラブ独立の二重公約が決定的な禍根を残しました。", "trap": "3つの協定の相手と約束内容の矛盾がパレスチナ問題の根本原因です。組み合わせを完璧に覚える。", "photo": "IMG_4149"}}, {"id": "W37", "subject": "世界史", "unit": "イギリスの中東三枚舌外交", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4149", "question": "1917年、イギリス外相がユダヤ系財閥ロスチャイルドに宛てた書簡で、パレスチナにおけるユダヤ人の「民族的郷土（ナショナル・ホーム）」建設を支持すると約束した宣言は何ですか。", "options": ["バルフォア宣言", "フサイン・マクマホン協定", "カイロ宣言", "ベルフォール協定"], "answer": 0, "explanation": {"reason": "1917年のバルフォア宣言で、イギリスは戦費調達のためユダヤ系金融資本の支持を取り付けようとしました。この宣言はアラブ人独立を約束したフサイン・マクマホン協定（1915）と真っ向から矛盾し、パレスチナ問題の根源となりました。", "key_point": "【最重要：用語の厳密な区別】イギリスは国際社会やアラブ側の激変を恐れ、「独立国家（Jewish State）」ではなく意図的に曖昧な「民族的郷土（National Home）」という表現を用いました。しかしシオニスト側はこれを将来のユダヤ人国家建設の確約と解釈し、現在に至るパレスチナ紛争の決定打となりました。", "trap": "「ユダヤ人国家の樹立」を公式に約束したと書くと歴史的に不正確です。条文の公式文言はあくまで「民族的郷土（ナショナル・ホーム）の建設」です。", "photo": "IMG_4149"}}, {"id": "W38", "subject": "世界史", "unit": "インド・東南アジアの民族運動", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4155", "question": "1905年にイギリスのインド総督カーゾンが出した「ベンガル分割令」に反発し、1906年のインド国民会議カルカッタ大会で採択された「4大綱領」に含まれないものはどれですか。", "options": ["完全武装蜂起", "スワデーシ（国産品愛用）", "スワラージ（自治獲得）", "英貨排斥（ボイコット）"], "answer": 0, "explanation": {"reason": "カルカッタ大会の四大綱領は「スワラージ（自治）」「スワデーシ（国産品愛用）」「英貨排斥（ボイコット）」「民族教育」であり、武装蜂起ではなく大衆的抵抗運動でした。", "key_point": "カルカッタ大会四大綱領：スワラージ（自治）、スワデーシ（国産品愛用）、英貨排斥、民族教育。ティラクらが指導。", "trap": "スワラージとスワデーシの意味の取り違え（スワデーシ＝国産品、スワラージ＝自治）が頻出。", "photo": "IMG_4155"}}, {"id": "W39", "subject": "世界史", "unit": "インド・東南アジアの民族運動", "type": "fillin", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4155", "question": "フランス支配下のベトナムで、ファン・ボイ・チャウが青年たちに日本への留学を呼びかけた民族独立運動を何というか。漢字4字または日本語で答えなさい。", "answer": "東遊運動", "aliases": ["とうゆううんどう", "ドンズー運動", "ドン・ズー運動"], "explanation": {"reason": "日露戦争での日本の勝利に刺激されたファン・ボイ・チャウ（潘佩珠）は維新会を結成し、近代化を学ぶため日本留学を促す「ドンズー（東遊）運動」を起こしました（後に日仏協約で解散させられる）。", "key_point": "ベトナム＝ファン・ボイ・チャウの「東遊運動（ドンズー運動）」。日本留学を奨励。", "trap": "ファン・チュー・チンとの区別、運動の名称（東遊）を漢字で書けるようにする。", "photo": "IMG_4155"}}, {"id": "W40", "subject": "世界史", "unit": "インド・東南アジアの民族運動", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4155", "question": "オランダ領東インド（現在のインドネシア）で、ジャワの商人たちが結成し、イスラーム教の連帯を基礎に大衆的民族運動へと発展した組織は何ですか。", "options": ["サレカット・イスラーム", "インドネシア共産党", "ブディ・ウトモ", "国民党"], "answer": 0, "explanation": {"reason": "1912年に結成された「サレカット・イスラーム（イスラーム同盟）」は、華僑商人に対抗するイスラーム商人の同業組合から発展し、反植民地運動の国民的組織となりました。", "key_point": "インドネシア＝サレカット・イスラーム（1912年）。イスラーム教を紐帯とした民族運動。", "trap": "ブディ・ウトモ（ジャワ貴族層中心）とサレカット・イスラーム（大衆的）の性格の違い。", "photo": "IMG_4155"}}, {"id": "W41", "subject": "世界史", "unit": "帝国主義の対立と第一次世界大戦の背景", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4154", "question": "1890年にドイツの宰相ビスマルクを辞職させ、世界政策（積極的軍備拡張・植民地獲得）を展開した皇帝は誰ですか。", "options": ["ヴィルヘルム2世", "ヴィルヘルム1世", "フリードリヒ3世", "フランツ・ヨーゼフ1世"], "answer": 0, "explanation": {"reason": "青年皇帝ヴィルヘルム2世はビスマルクを解任して親政を開始し、露独再保障条約の更新を拒否してロシアをフランス側に走らせ、世界大戦への布石を作りました。", "key_point": "ヴィルヘルム2世＝ビスマルク解任（1890）、世界政策（海軍拡張・3B政策）。", "trap": "ヴィルヘルム1世はドイツ帝国建国時の皇帝です。", "photo": "IMG_4154"}}, {"id": "W42", "subject": "世界史", "unit": "帝国主義の対立と第一次世界大戦の背景", "type": "tf", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4154 / IMG_4158", "question": "1891〜94年に成立した露仏同盟は、ドイツとオーストリアの三国同盟に対抗する軍事同盟であり、これによりドイツは東西二正面作戦の危険に直面することになった。", "answer": true, "explanation": {"reason": "ビスマルクが最も恐れていた「フランスとロシアの提携」がヴィルヘルム2世の再保障条約拒否により現実化し、ドイツは二正面戦争の恐怖からシュリーフェン・プランを立案することになります。", "key_point": "露仏同盟（1891-94）＝フランスの孤立脱出、ドイツの東西挟み撃ち体制の成立。", "trap": "露仏同盟の成立が第一次世界大戦の対立構図（三国協商の第一歩）を決定づけました。", "photo": "IMG_4154"}}, {"id": "W43", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "fillin", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4134 / IMG_4158", "question": "1916年、要塞をめぐってドイツ軍とフランス軍が激突し、両軍合わせて数十万人の死傷者を出した「ヴェルダンの戦い」で、要塞を死守したフランス軍の将軍は誰ですか。", "answer": "ペタン", "aliases": ["ペタン将軍", "フィリップ・ペタン"], "explanation": {"reason": "ペタン将軍は「やつらを通すな（On ne passe pas）」を合言葉にヴェルダン要塞を死守し国民的英雄となりました（第二次世界大戦ではヴィシー政府首班）。", "key_point": "ヴェルダンの戦い（1916）＝フランス軍の死守（ペタン）。消耗戦の極致。", "trap": "ソンムの戦い（イギリス軍中心・戦車初登場）とヴェルダンの戦い（フランス軍要塞戦）の区別。", "photo": "IMG_4158"}}, {"id": "W44", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4159", "question": "1917年にドイツ外相がメキシコ政府に対し、対米宣戦の見返りにテキサスなどの領土回復を提案した暗号電報がイギリスに傍受・公開され、アメリカ世論の激昂を招いた事件は何ですか。", "options": ["ツィンメルマン電報事件", "エムス電報事件", "パンデミック事件", "ルシタニア電報"], "answer": 0, "explanation": {"reason": "ツィンメルマン電報事件（ツィンメルマン秘密電報）により米国民の怒りが爆発し、無制限潜水艦作戦と相まってウィルソン大統領の対独宣戦布告を後押ししました。", "key_point": "ツィンメルマン電報事件＝独メキシコ同盟画策。アメリカ参戦の直接契機の一つ。", "trap": "エムス電報事件はビスマルクが普仏戦争を誘発した1870年の事件です。", "photo": "IMG_4159"}}, {"id": "W45", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "sort", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4134 / IMG_4158 / IMG_4159", "question": "第一次世界大戦の出来事を古い順に正しく並べ替えなさい。", "options": ["サラエボ事件の発生", "イタリアがロンドン秘密条約で参戦", "アメリカ合衆国が対独宣戦布告", "ドイツが休戦協定に調印"], "answer": [0, 1, 2, 3], "explanation": {"reason": "サラエボ事件（1914.6）→ ロンドン密約によるイタリア参戦（1915.5）→ アメリカ参戦（1917.4）→ ドイツ休戦（1918.11）の順です。", "key_point": "開戦1914 → 伊参戦1915 → 露革命・米参戦1917 → 独降伏・終戦1918。", "trap": "アメリカ参戦（1917春）とロシア革命（1917春〜秋）が同年であることを連動させて覚える。", "photo": "IMG_4158"}}, {"id": "W46", "subject": "世界史", "unit": "ロシア革命とソ連の成立", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4138 / IMG_4160", "question": "十月革命で成立したソヴィエト政権において、外務人民委員や軍事人民委員を務め、赤軍（赤色赤軍）を創設して反革命軍や干渉軍を撃退した指導者は誰ですか。", "options": ["トロツキー", "スターリン", "ケレンスキー", "ブハーリン"], "answer": 0, "explanation": {"reason": "トロツキーは卓越した軍事手腕で赤軍を組織・指揮し、内戦を勝利に導きました（後にスターリンとの権力闘争に敗れて国外追放）。", "key_point": "トロツキー＝赤軍の創設者、十月革命の指導者、世界革命論（恒久革命論）。", "trap": "ケレンスキーは倒された臨時政府の首相です。", "photo": "IMG_4160"}}, {"id": "W47", "subject": "世界史", "unit": "ロシア革命とソ連の成立", "type": "tf", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4138 / IMG_4160", "question": "1919年、モスクワで設立され、世界各国の社会主義・共産主義政党を指導した国際組織は「第3インターナショナル（コミンテルン）」である。", "answer": true, "explanation": {"reason": "レーニンの提唱で1919年にモスクワで創設され、世界革命を指導する中央集権的組織として各国共産党の結成を後押ししました。", "key_point": "コミンテルン（第3インターナショナル・1919年モスクワ）。中国共産党や日本共産党の結成にも関与。", "trap": "第2インターナショナルは大戦勃発時に各国の愛国主義で崩壊しました。", "photo": "IMG_4157"}}, {"id": "W48", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4139 / IMG_4153", "question": "パリ講和会議でイギリス首相ロイド＝ジョージとともに、ドイツに対して極めて強硬な姿勢を取り多額の賠償金と領土割譲を要求したフランス首相は誰ですか。", "options": ["クレマンソー", "ポアンカレ", "ブリアン", "ド・ゴール"], "answer": 0, "explanation": {"reason": "「虎（ル・ティーグル）」の異名をとったクレマンソー首相は、普仏戦争以来の復讐と自国の安全保障のため、ドイツを徹底的に弱体化させる講和条約を主導しました。", "key_point": "パリ講和会議の「ビッグ3」＝ウィルソン（米）、クレマンソー（仏）、ロイド＝ジョージ（英）。", "trap": "ポアンカレは後のルール占領（1923年）を行ったフランス首相です。", "photo": "IMG_4153"}}, {"id": "W49", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "fillin", "difficulty": "応用", "is_critical": false, "source_photo": "IMG_4153", "question": "ヴェルサイユ条約において、ドイツとその同盟国のみに戦争勃発の一切の責任を負わせ、莫大な賠償金請求の法的根拠となった条項（第何条）を戦争責任条項というか。数字で答えなさい。", "answer": "231", "aliases": ["231条", "第231条"], "explanation": {"reason": "第231条（戦争責任条項）はドイツに「全責任」を認めることを強要し、ドイツ国民に深い屈辱感と復讐心（後のナチス台頭の温床）を植え付けました。", "key_point": "ヴェルサイユ条約第231条＝戦争責任条項（War Guilt Clause）。", "trap": "ノート資料（IMG_4153）に明記されている重要知識です。", "photo": "IMG_4153"}}, {"id": "W50", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4148", "question": "第一次世界大戦後にセーヴル条約を結ばされたオスマン帝国で、祖国防衛の戦争を指揮してギリシア軍を撃退し、スルタン制を廃止してトルコ共和国を樹立した英雄は誰ですか。", "options": ["ムスタファ・ケマル（アタテュルク）", "エンヴェル・パシャ", "レザー・ハン", "イブン・サウード"], "answer": 0, "explanation": {"reason": "ムスタファ・ケマルはアンカラに国民議会を組織して祖国解放戦争を戦い、1923年に有利なローザンヌ条約を結び直してトルコ共和国を建国、初代大統領となりました。", "key_point": "トルコ革命＝ムスタファ・ケマル。セーヴル条約破棄 → ローザンヌ条約（1923）獲得、政教分離・近代化政策。", "trap": "敗戦国の中で唯一、武力で不平等な講和条約を改定させたのがトルコです。", "photo": "IMG_4148"}}, {"id": "W51", "subject": "世界史", "unit": "中国の新文化運動と五四運動", "type": "fillin", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4150", "question": "コロンビア大学でデューイに学び、『新青年』に「文学改良芻議」を発表して口語による文学（白話運動）を理論的に主導した思想家は誰ですか。", "answer": "胡適", "aliases": ["こてき", "フー・シー"], "explanation": {"reason": "胡適（こてき）は「言文一致」を目指し、従来の難解な文語文を廃して日常の言葉で文章を書く「白話文学」を提唱しました。", "key_point": "胡適＝「文学改良芻議」、白話運動の提唱者。 ※『新青年』は1915年に陳独秀が『青年雑誌』として創刊し、1916年に改題された雑誌。", "trap": "魯迅（小説実践者）と胡適（理論提唱者）の業績の区別。", "photo": "IMG_4150"}}, {"id": "W52", "subject": "世界史", "unit": "中国の新文化運動と五四運動", "type": "choice4", "difficulty": "基本", "is_critical": true, "source_photo": "IMG_4150 / IMG_4157", "question": "五四運動の高揚とロシア革命の影響を受け、1921年に上海で結成された政党は何ですか。", "options": ["中国共産党", "中国国民党", "中国同盟会", "光復会"], "answer": 0, "explanation": {"reason": "コミンテルンの支援のもと、陳独秀や李大釗、毛沢東らが参加して1921年7月に中国共産党第1回全国代表大会が上海で開催されました。", "key_point": "1921年＝中国共産党結成（上海）。初代総書記は陳独秀。", "trap": "中国国民党は孫文が1919年に改組して結成した政党です。", "photo": "IMG_4150"}}, {"id": "W53", "subject": "世界史", "unit": "朝鮮の民族運動", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4150 / IMG_4163", "question": "三・一独立運動の際、梨花学堂の女学生で万歳デモを指導して逮捕され、獄中で拷問を受けながらも信念を貫き「韓国のジャンヌ・ダルク」と称される人物は誰ですか。", "options": ["柳寛順（ユ・グァンスン）", "金九", "李承晩", "申采浩"], "answer": 0, "explanation": {"reason": "柳寛順（ユ・グァンスン）は故郷でデモを組織し、西大門刑務所内でも独立を叫び続け18歳で獄死しました。ノート・教科書資料（IMG_4150, 4163）で強調されています。", "key_point": "三・一独立運動の象徴的烈士＝柳寛順（ユ・グァンスン）。", "trap": "金九や李承晩は大韓民国臨時政府（上海）の指導者です。", "photo": "IMG_4163"}}, {"id": "W54", "subject": "世界史", "unit": "イギリスの中東三枚舌外交", "type": "tf", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4149", "question": "フサイン・マクマホン協定は、イギリスがメッカの太守フサインに対し、オスマン帝国への反乱（アラブ反乱）を起こす見返りにアラブ人の独立国家建設を認めた書簡協定である。", "answer": true, "explanation": {"reason": "駐エジプト高等弁務官マクマホンがフサインと交わした秘密協定で、「アラビアのロレンス」が指導したアラブ反乱の根拠となりましたが、サイクス・ピコ協定やバルフォア宣言と矛盾していました。", "key_point": "フサイン・マクマホン協定（1915）＝アラブ人独立約束。", "trap": "協定の相手（フサイン＝アラブ側）と約束内容を正確に把握する。", "photo": "IMG_4149"}}, {"id": "W55", "subject": "世界史", "unit": "インド・東南アジアの民族運動", "type": "choice4", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4155", "question": "1906年、イギリスがインド国民会議の反英運動を分断・牽制するために結成を後押しした、親英的なイスラーム教徒の政治組織は何ですか。", "options": ["全インド・ムスリム連盟", "サレカット・イスラーム", "青年トルコ党", "インド国民会議派"], "answer": 0, "explanation": {"reason": "イギリスは「分割統治（ディバイド・アンド・ルール）」政策を用い、ヒンドゥー主導の国民会議派に対抗させるためダッカで全インド・ムスリム連盟を結成させました（後のパキスタン独立の母体）。", "key_point": "全インド・ムスリム連盟（1906）＝英の分割統治策（ヒンドゥーとムスリムの離間）。", "trap": "サレカット・イスラームはインドネシアの組織です。", "photo": "IMG_4155"}}, {"id": "W56", "subject": "世界史", "unit": "インド・東南アジアの民族運動", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4155", "question": "1908年、立憲政体の復活（ミドハト憲法の復活）を求めてオスマン帝国で青年将校たちが蜂起した立憲革命を何というか。", "options": ["青年トルコ革命", "イラン立憲革命", "辛亥革命", "エジプト革命"], "answer": 0, "explanation": {"reason": "統一進歩団（青年トルコ党）の将校らがマケドニアで蜂起し、スルタンのアブデュルハミト2世に停止されていた憲法を復活させました。", "key_point": "青年トルコ革命（1908年）＝ミドハト憲法復活。バルカン情勢緊迫化の契機となった。", "trap": "イラン立憲革命はカージャール朝下での1905年の運動です。", "photo": "IMG_4155"}}, {"id": "W57", "subject": "世界史", "unit": "第一次世界大戦の経過と総力戦", "type": "choice4", "difficulty": "標準", "is_critical": false, "source_photo": "IMG_4143 / IMG_4157", "question": "第一次世界大戦における死者数（軍人戦死者）として、一般に認められている規模として最も適切なものはどれですか。", "options": ["約850万人〜1000万人", "約50万人", "約5000万人", "約1億人"], "answer": 0, "explanation": {"reason": "教科書資料（IMG_4143）記載の通り、連合国・同盟国合わせた軍人の戦死者数は約856万人に達し、民間人犠牲者や負傷者を含めると甚大な人的損失となりました。", "key_point": "第一次世界大戦の戦死者＝約850万〜1000万人。未曾有の総力戦被害。", "trap": "約5000万人以上は第二次世界大戦の死者規模です。", "photo": "IMG_4143"}}, {"id": "W58", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "sort", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4138 / IMG_4139 / IMG_4140 / IMG_4160", "question": "第一次世界大戦末期から戦後の出来事を古い順に正しく並べ替えなさい。", "options": ["ロシア十月革命によるソヴィエト政権樹立", "ウィルソンの「十四か条」発表", "ヴェルサイユ条約調印", "国際連盟の正式発足"], "answer": [0, 1, 2, 3], "explanation": {"reason": "十月革命（1917.11）→ 十四か条（1918.1）→ ヴェルサイユ条約調印（1919.6）→ 国際連盟発足（1920.1）の順です。", "key_point": "1917.11露革命 → 1918.1十四か条 → 1919.6ヴェルサイユ → 1920.1国際連盟。", "trap": "ウィルソンの十四か条は、レーニンの平和布告（1917.11）に対抗して1918年1月に発表されたという因果関係。", "photo": "IMG_4139"}}, {"id": "W59", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "choice4", "difficulty": "応用", "is_critical": false, "source_photo": "IMG_4161 / IMG_4164", "question": "風刺画「橋の隙間（The Gap in the Bridge）」において、国際連盟という石橋の「要石（Keystone）」が欠けている様子が描かれていますが、この欠けている要石が象徴している国はどこですか。", "options": ["アメリカ合衆国", "ドイツ", "ソヴィエト・ロシア", "日本"], "answer": 0, "explanation": {"reason": "国際連盟という石橋の中心にあるべき「KEYSTONE（要石）」にアンクル・サム（アメリカ）が腰掛けて参加を拒絶している様子を描いた有名な風刺画（IMG_4164）です。", "key_point": "風刺画「橋の隙間」＝提唱国アメリカの不参加による国際連盟の脆弱さを風刺。", "trap": "テストの資料問題・図版問題の定番中の定番です。", "photo": "IMG_4164"}}, {"id": "W60", "subject": "世界史", "unit": "ヴェルサイユ体制と国際連盟", "type": "tf", "difficulty": "基本", "is_critical": false, "source_photo": "IMG_4140 / IMG_4161", "question": "第一次世界大戦の結果、東欧地域ではポーランド、チェコスロバキア、フィンランド、バルト三国（エストニア・ラトビア・リトアニア）などが相次いで独立を果たした。", "answer": true, "explanation": {"reason": "ロシア帝国・オーストリア帝国・ドイツ帝国の崩壊と民族自決の原則により、これら諸国が独立しました（対ソ連の「衛生線・防共の壁」としての意図もありました）。", "key_point": "第一次世界大戦後の東欧新興独立国＝ポーランド、チェコスロバキア、ユーゴスラビア、フィンランド、バルト三国。", "trap": "帝国が解体して多数の民族国家が誕生したという地図問題も頻出です。", "photo": "IMG_4140"}}, {"id": "J61", "subject": "日本史", "unit": "大正政変と政党内閣の展開", "type": "sort", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4151", "question": "第1次護憲運動から原敬内閣成立までの内閣の退陣原因を、内閣の成立順に並べ替えなさい。", "options": ["大正政変による民衆暴動と議会不信任（第3次桂内閣）", "シーメンス事件による海軍汚職発覚（第1次山本内閣）", "大戦指導の困難と後継問題（第2次大隈内閣）", "シベリア出兵に起因する米騒動の激化（寺内内閣）"], "answer": [0, 1, 2, 3], "explanation": {"reason": "第3次桂内閣（大正政変）→ 第1次山本内閣（シーメンス事件）→ 第2次大隈内閣 → 寺内内閣（米騒動）の順に退陣しました。", "key_point": "各内閣の退陣要因：桂（大正政変）、山本（海軍汚職）、寺内（米騒動）。", "trap": "内閣名と事件名の対応を正確に紐づけておくこと。", "photo": "IMG_4151"}}, {"id": "J62", "subject": "日本史", "unit": "ワシントン体制と軍縮", "type": "sort", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4162", "question": "第一次世界大戦後のアジア・太平洋をめぐる日本の外交条約を成立順に並べ替えなさい。", "options": ["パリ講和条約（山東権益と南洋諸島委任統治を承認）", "四カ国条約（太平洋領土の保全と日英同盟破棄）", "九カ国条約（中国の主権尊重と門戸開放・機会均等）", "日ソ基本条約（ソ連との国交樹立と北樺太撤兵）"], "answer": [0, 1, 2, 3], "explanation": {"reason": "パリ講和条約（1919）→ 四カ国条約（1921）→ 九カ国条約（1922）→ 日ソ基本条約（1925）の順です。", "key_point": "ヴェルサイユ体制（1919）からワシントン体制（1921-22）、日ソ国交樹立（1925）への流れ。", "trap": "四カ国条約（1921年12月）と九カ国条約（1922年2月）の微細な順序にも注目。", "photo": "IMG_4162"}}, {"id": "W61", "subject": "世界史", "unit": "ロシア革命とソ連の成立", "type": "sort", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4138 / IMG_4160", "question": "ロシア革命期の主要な政策と出来事を古い順に正しく並べ替えなさい。", "options": ["二月革命（ロマノフ朝滅亡）", "十月革命（ソヴィエト政権樹立）", "戦時共産主義の実施と対ソ干渉戦争", "NEP（新経済政策）の導入", "ソヴィエト社会主義共和国連邦（ソ連）の成立"], "answer": [0, 1, 2, 3, 4], "explanation": {"reason": "二月革命（1917.3）→ 十月革命（1917.11）→ 戦時共産主義（1918-1921）→ NEP導入（1921）→ ソ連成立（1922）の順です。", "key_point": "ロシア革命の時系列：二月革命 → 十月革命 → 戦時共産主義 → NEP → ソ連成立。", "trap": "NEP（1921）がソ連成立（1922）より先に行われた点に注意。", "photo": "IMG_4160"}}, {"id": "W62", "subject": "世界史", "unit": "帝国主義の対立と第一次世界大戦の背景", "type": "sort", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4133 / IMG_4158", "question": "第一次世界大戦勃発に至るバルカン半島および国際対立の出来事を古い順に並べ替えなさい。", "options": ["青年トルコ革命とオーストリアによるボスニア・ヘルツェゴヴィナ併合", "第1次バルカン戦争（バルカン同盟 vs オスマン帝国）", "第2次バルカン戦争（ブルガリアの孤立と敗北）", "サラエボ事件（オーストリア皇太子夫妻暗殺）"], "answer": [0, 1, 2, 3], "explanation": {"reason": "青年トルコ革命・ボスニア併合（1908）→ 第1次バルカン戦争（1912）→ 第2次バルカン戦争（1913）→ サラエボ事件（1914）の順です。", "key_point": "「ヨーロッパの火薬庫」の爆発過程：1908年ボスニア併合 → 1912第1次 → 1913第2次 → 1914開戦。", "trap": "ボスニア併合（1908年）がセルビアの反墺感情を決定的に悪化させました。", "photo": "IMG_4133"}}, {"id": "W63", "subject": "世界史", "unit": "アジアの民族運動と中国革命", "type": "sort", "difficulty": "標準", "is_critical": true, "source_photo": "IMG_4135 / IMG_4150 / IMG_4156", "question": "中国近現代史の出来事を古い順に正しく並べ替えなさい。", "options": ["中国同盟会の結成（東京）", "武昌蜂起と辛亥革命の勃発", "陳独秀による雑誌『青年雑誌（翌年『新青年』に改題）』の創刊", "五四運動の勃発（北京）", "中国共産党の結成（上海）"], "answer": [0, 1, 2, 3, 4], "explanation": {"reason": "中国同盟会（1905）→ 辛亥革命（1911）→ 『新青年』創刊（1915）→ 五四運動（1919）→ 中国共産党結成（1921）の順です。", "key_point": "中国革命の流れ：1905同盟会 → 1911辛亥革命 → 1915新文化運動 → 1919五四運動 → 1921共産党成立。", "trap": "新文化運動（1915〜）の思想的成熟が五四運動（1919）を生み、それが中国共産党結成（1921）につながりました。", "photo": "IMG_4156"}}];
+
+  // State Management
+  let currentMode = 'all';
+  let questionCountLimit = 10;
+  let activeQuestionList = [];
+  let currentQIndex = 0;
+  let currentScore = 0;
+  let currentResults = []; // { question, userAns, isCorrect }
+  
+  // Single Answer Lock Flag (Prevents double scoring / duplicate attempts)
+  let isCurrentQuestionAnswered = false;
+
+  // Shuffled choices state for current 4-choice question
+  let currentDisplayChoices = []; // array of { text, origIdx }
+
+  // Sorting state for current sorting question
+  let currentSortPoolItems = []; // array of { text, origIdx }
+  let sortSelectedOrigIndices = [];
+
+  // LocalStorage Key
+  const STORAGE_KEY = "REKISHI_MASTER_STORAGE_V2";
+
+  // Helper: Local Date string YYYY-MM-DD
+  function getLocalDateStr() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  // Fisher-Yates Shuffle
+  function shuffleArray(array) {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function getStorageData() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch (e) {
+      console.warn("LocalStorage access failed or disabled:", e);
+    }
+    return {
+      today: getLocalDateStr(),
+      todayAnswered: 0,
+      totalAttempts: 0,
+      totalCorrect: 0,
+      questionStats: {}, // id -> { attempts, correct, wrong, lastWrong }
+      favorites: []
+    };
+  }
+
+  function saveStorageData(data) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    } catch (e) {
+      console.warn("LocalStorage save failed:", e);
+    }
+  }
+
+  // Initialize and Render Home Stats
+  function initHome() {
+    const data = getStorageData();
+    const todayStr = getLocalDateStr();
+    if (data.today !== todayStr) {
+      data.today = todayStr;
+      data.todayAnswered = 0;
+      saveStorageData(data);
+    }
+
+    document.getElementById('statTodayCount').textContent = data.todayAnswered || 0;
+    const rate = data.totalAttempts > 0 ? Math.max(0, Math.min(100, Math.round((data.totalCorrect / data.totalAttempts) * 100))) : 0;
+    document.getElementById('statTotalAccuracy').textContent = rate + "%";
+
+    // Count weak questions (wrong > 0 and wrong >= correct)
+    let weakCount = 0;
+    for (const qid in data.questionStats) {
+      const st = data.questionStats[qid];
+      if (st.wrong > 0 && st.wrong >= st.correct) {
+        weakCount++;
+      }
+    }
+    document.getElementById('statWeakCount').textContent = weakCount;
+    document.getElementById('statFavoriteCount').textContent = (data.favorites || []).length;
+
+    // Build Unit Dropdown
+    const units = [...new Set(ALL_QUESTIONS.map(q => q.unit))];
+    const dropdown = document.getElementById('unitDropdown');
+    dropdown.innerHTML = units.map(u => `<option value="${u}">${u} (${ALL_QUESTIONS.filter(q => q.unit === u).length}問)</option>`).join('');
+
+    // Build Unit Stats List
+    const unitStatsList = document.getElementById('unitStatsList');
+    unitStatsList.innerHTML = units.map(u => {
+      const uQs = ALL_QUESTIONS.filter(q => q.unit === u);
+      let attempts = 0;
+      let correct = 0;
+      uQs.forEach(q => {
+        const st = data.questionStats[q.id];
+        if (st) {
+          attempts += st.attempts;
+          correct += st.correct;
+        }
+      });
+      const uRate = attempts > 0 ? Math.max(0, Math.min(100, Math.round((correct / attempts) * 100))) : 0;
+      return `
+        <div class="unit-item">
+          <div class="unit-header">
+            <span>${u}</span>
+            <span>${attempts > 0 ? uRate + '%' : '未解答'} (${attempts}回)</span>
+          </div>
+          <div class="progress-bg">
+            <div class="progress-bar" style="width: ${uRate}%;"></div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // Mode Selection
+  function selectMode(mode, el) {
+    currentMode = mode;
+    document.querySelectorAll('.mode-card').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+
+    const unitArea = document.getElementById('unitSelectArea');
+    if (mode === 'unit') {
+      unitArea.classList.remove('hide');
+    } else {
+      unitArea.classList.add('hide');
+    }
+  }
+
+  function setCount(count, el) {
+    questionCountLimit = count;
+    document.querySelectorAll('.count-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  // Start Quiz
+  function startQuiz() {
+    const data = getStorageData();
+    let candidates = [...ALL_QUESTIONS];
+
+    if (currentMode === 'jp') {
+      candidates = candidates.filter(q => q.subject === '日本史');
+    } else if (currentMode === 'wh') {
+      candidates = candidates.filter(q => q.subject === '世界史');
+    } else if (currentMode === 'critical') {
+      candidates = candidates.filter(q => q.is_critical);
+    } else if (currentMode === 'weak') {
+      candidates = candidates.filter(q => {
+        const st = data.questionStats[q.id];
+        return st && st.wrong > 0;
+      });
+      if (candidates.length === 0) {
+        alert("現在、間違えた履歴のある問題はありません！総合テストで実力を試してみましょう。");
+        return;
+      }
+      // Sort by error priority
+      candidates.sort((a, b) => {
+        const stA = data.questionStats[a.id] || { wrong: 0, correct: 0 };
+        const stB = data.questionStats[b.id] || { wrong: 0, correct: 0 };
+        return (stB.wrong - stB.correct) - (stA.wrong - stA.correct);
+      });
+    } else if (currentMode === 'quick') {
+      candidates = candidates.filter(q => q.is_critical || q.difficulty === '基本');
+    } else if (currentMode === 'unit') {
+      const selUnit = document.getElementById('unitDropdown').value;
+      candidates = candidates.filter(q => q.unit === selUnit);
+    }
+
+    // Randomize candidates (except weak mode which is priority sorted)
+    if (currentMode !== 'weak') {
+      candidates = shuffleArray(candidates);
+    }
+
+    // Limit count
+    activeQuestionList = candidates.slice(0, Math.min(questionCountLimit, candidates.length));
+    if (activeQuestionList.length === 0) {
+      alert("該当する問題がありませんでした。");
+      return;
+    }
+
+    currentQIndex = 0;
+    currentScore = 0;
+    currentResults = [];
+
+    document.getElementById('homeScreen').classList.add('hide');
+    document.getElementById('resultScreen').classList.add('hide');
+    document.getElementById('quizScreen').classList.remove('hide');
+
+    renderCurrentQuestion();
+  }
+
+  // Render Question
+  function renderCurrentQuestion() {
+    isCurrentQuestionAnswered = false; // Reset lock for this question
+    const q = activeQuestionList[currentQIndex];
+    const data = getStorageData();
+
+    // Progress
+    document.getElementById('quizProgressText').textContent = `第 ${currentQIndex + 1} 問 / 全 ${activeQuestionList.length} 問`;
+    const pct = Math.round(((currentQIndex + 1) / activeQuestionList.length) * 100);
+    document.getElementById('quizProgressBar').style.width = pct + "%";
+
+    // Meta tags
+    const subTag = document.getElementById('qSubjectTag');
+    subTag.textContent = q.subject;
+    subTag.className = 'tag ' + (q.subject === '日本史' ? 'badge-jp' : 'badge-wh');
+
+    const diffTag = document.getElementById('qDiffTag');
+    diffTag.textContent = q.difficulty;
+    diffTag.className = 'tag ' + (q.difficulty === '基本' ? 'tag-diff-basic' : (q.difficulty === '標準' ? 'tag-diff-std' : 'tag-diff-adv'));
+
+    // Bookmark star
+    const starBtn = document.getElementById('starBtn');
+    if ((data.favorites || []).includes(q.id)) {
+      starBtn.classList.add('active');
+    } else {
+      starBtn.classList.remove('active');
+    }
+
+    document.getElementById('qUnitTitle').textContent = q.unit;
+    document.getElementById('questionText').textContent = q.question;
+
+    // Reset interfaces & explanation
+    document.getElementById('choiceInterface').classList.add('hide');
+    document.getElementById('fillinInterface').classList.add('hide');
+    document.getElementById('tfInterface').classList.add('hide');
+    document.getElementById('sortInterface').classList.add('hide');
+    document.getElementById('explanationCard').style.display = 'none';
+    document.getElementById('btnNext').style.display = 'none';
+
+    // Show appropriate interface
+    if (q.type === 'choice4') {
+      renderChoiceInterface(q);
+    } else if (q.type === 'fillin') {
+      renderFillinInterface(q);
+    } else if (q.type === 'tf') {
+      renderTfInterface(q);
+    } else if (q.type === 'sort') {
+      renderSortInterface(q);
+    }
+  }
+
+  // 1. 4-Choice with Fisher-Yates Shuffling
+  function renderChoiceInterface(q) {
+    const container = document.getElementById('choiceInterface');
+    container.classList.remove('hide');
+
+    // Create options with original indices and shuffle
+    const rawOptions = q.options.map((opt, origIdx) => ({ text: opt, origIdx }));
+    currentDisplayChoices = shuffleArray(rawOptions);
+
+    container.innerHTML = currentDisplayChoices.map((item, displayIdx) => `
+      <button class="choice-btn" id="choiceBtn_${displayIdx}" onclick="handleChoiceAnswer(${displayIdx})">
+        <span class="choice-label">${displayIdx + 1}</span>
+        <span class="choice-text">${item.text}</span>
+      </button>
+    `).join('');
+  }
+
+  function handleChoiceAnswer(selectedDisplayIdx) {
+    if (isCurrentQuestionAnswered) return; // Strict lock: prevent double scoring
+    const q = activeQuestionList[currentQIndex];
+    const selectedItem = currentDisplayChoices[selectedDisplayIdx];
+    const isCorrect = (selectedItem.origIdx === q.answer);
+
+    const container = document.getElementById('choiceInterface');
+    const buttons = container.querySelectorAll('.choice-btn');
+
+    // Highlight buttons and disable all
+    buttons.forEach((btn, idx) => {
+      btn.disabled = true;
+      if (currentDisplayChoices[idx].origIdx === q.answer) {
+        btn.classList.add('correct');
+      } else if (idx === selectedDisplayIdx) {
+        btn.classList.add('wrong');
+      }
+    });
+
+    finalizeAnswer(isCorrect, selectedItem.text);
+  }
+
+  // 2. Fill-in Format
+  function renderFillinInterface(q) {
+    const container = document.getElementById('fillinInterface');
+    container.classList.remove('hide');
+    const input = document.getElementById('fillinInput');
+    const btn = document.getElementById('btnFillinSubmit');
+    input.value = '';
+    input.disabled = false;
+    btn.disabled = false;
+    input.focus();
+  }
+
+  function normalizeText(str) {
+    return str.trim()
+      .replace(/[！-～]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0))
+      .replace(/\s+/g, '')
+      .toLowerCase();
+  }
+
+  function handleFillinAnswer() {
+    if (isCurrentQuestionAnswered) return; // Strict lock
+    const q = activeQuestionList[currentQIndex];
+    const input = document.getElementById('fillinInput');
+    const btn = document.getElementById('btnFillinSubmit');
+    const userVal = input.value.trim();
+    if (!userVal) return;
+
+    input.disabled = true;
+    btn.disabled = true;
+
+    const normUser = normalizeText(userVal);
+    const normAns = normalizeText(q.answer);
+    const normAliases = (q.aliases || []).map(normalizeText);
+
+    const isCorrect = (normUser === normAns || normAliases.includes(normUser));
+    finalizeAnswer(isCorrect, userVal);
+  }
+
+  // 3. True/False Format
+  function renderTfInterface(q) {
+    const container = document.getElementById('tfInterface');
+    container.classList.remove('hide');
+    const bTrue = document.getElementById('btnTfTrue');
+    const bFalse = document.getElementById('btnTfFalse');
+    bTrue.className = 'tf-btn';
+    bFalse.className = 'tf-btn';
+    bTrue.disabled = false;
+    bFalse.disabled = false;
+  }
+
+  function handleTfAnswer(userVal) {
+    if (isCurrentQuestionAnswered) return; // Strict lock
+    const q = activeQuestionList[currentQIndex];
+    const isCorrect = (userVal === q.answer);
+    const bTrue = document.getElementById('btnTfTrue');
+    const bFalse = document.getElementById('btnTfFalse');
+
+    bTrue.disabled = true;
+    bFalse.disabled = true;
+
+    const chosenBtn = userVal ? bTrue : bFalse;
+    if (isCorrect) {
+      chosenBtn.classList.add('correct');
+    } else {
+      chosenBtn.classList.add('wrong');
+      const correctBtn = q.answer ? bTrue : bFalse;
+      correctBtn.classList.add('correct');
+    }
+
+    finalizeAnswer(isCorrect, userVal ? "正しい" : "誤り");
+  }
+
+  // 4. Sorting with Initial Shuffling
+  function renderSortInterface(q) {
+    const container = document.getElementById('sortInterface');
+    container.classList.remove('hide');
+    sortSelectedOrigIndices = [];
+
+    // Shuffle pool items so they are NOT in chronological order initially!
+    const rawItems = q.options.map((opt, origIdx) => ({ text: opt, origIdx }));
+    currentSortPoolItems = shuffleArray(rawItems);
+
+    const slots = document.getElementById('sortSlots');
+    slots.innerHTML = q.options.map((_, idx) => `
+      <div class="sort-slot" id="sortSlot_${idx}">
+        <span class="slot-num">${idx + 1}番目</span>
+        <span class="slot-text" style="color: var(--text-muted);">タップして選択</span>
+      </div>
+    `).join('');
+
+    const pool = document.getElementById('sortPool');
+    pool.innerHTML = currentSortPoolItems.map((item, poolIdx) => `
+      <button class="sort-card-btn" id="sortCard_${poolIdx}" onclick="tapSortCard(${poolIdx})">
+        ${item.text}
+      </button>
+    `).join('');
+
+    document.getElementById('btnSortReset').disabled = false;
+    document.getElementById('btnSortSubmit').disabled = false;
+  }
+
+  function tapSortCard(poolIdx) {
+    if (isCurrentQuestionAnswered) return;
+    const item = currentSortPoolItems[poolIdx];
+    if (sortSelectedOrigIndices.includes(item.origIdx)) return;
+    const q = activeQuestionList[currentQIndex];
+    if (sortSelectedOrigIndices.length >= q.options.length) return;
+
+    const slotIdx = sortSelectedOrigIndices.length;
+    sortSelectedOrigIndices.push(item.origIdx);
+
+    const slot = document.getElementById(`sortSlot_${slotIdx}`);
+    slot.classList.add('filled');
+    slot.querySelector('.slot-text').textContent = item.text;
+    slot.querySelector('.slot-text').style.color = "var(--text-main)";
+
+    document.getElementById(`sortCard_${poolIdx}`).classList.add('used');
+  }
+
+  function resetSortOrder() {
+    if (isCurrentQuestionAnswered) return;
+    const q = activeQuestionList[currentQIndex];
+    renderSortInterface(q);
+  }
+
+  function handleSortAnswer() {
+    if (isCurrentQuestionAnswered) return; // Strict lock
+    const q = activeQuestionList[currentQIndex];
+    if (sortSelectedOrigIndices.length < q.options.length) {
+      alert("すべての項目を順番に選択してください。");
+      return;
+    }
+
+    document.getElementById('btnSortReset').disabled = true;
+    document.getElementById('btnSortSubmit').disabled = true;
+
+    let isCorrect = true;
+    for (let i = 0; i < q.answer.length; i++) {
+      if (sortSelectedOrigIndices[i] !== q.answer[i]) {
+        isCorrect = false;
+        break;
+      }
+    }
+
+    const userOrderedText = sortSelectedOrigIndices.map((origIdx, i) => `${i+1}. ${q.options[origIdx]}`).join(' → ');
+    finalizeAnswer(isCorrect, userOrderedText);
+  }
+
+  // Common finalize logic with single-grade guarantee
+  function finalizeAnswer(isCorrect, userDisplay) {
+    if (isCurrentQuestionAnswered) return; // Double guard
+    isCurrentQuestionAnswered = true; // Lock immediately
+
+    const q = activeQuestionList[currentQIndex];
+    if (isCorrect) {
+      currentScore++;
+    }
+
+    currentResults.push({
+      question: q,
+      userAns: userDisplay,
+      isCorrect: isCorrect
+    });
+
+    // Update LocalStorage stats
+    const data = getStorageData();
+    data.todayAnswered = (data.todayAnswered || 0) + 1;
+    data.totalAttempts = (data.totalAttempts || 0) + 1;
+    if (isCorrect) {
+      data.totalCorrect = (data.totalCorrect || 0) + 1;
+    }
+
+    if (!data.questionStats[q.id]) {
+      data.questionStats[q.id] = { attempts: 0, correct: 0, wrong: 0 };
+    }
+    const st = data.questionStats[q.id];
+    st.attempts++;
+    if (isCorrect) {
+      st.correct++;
+    } else {
+      st.wrong++;
+      st.lastWrong = new Date().toISOString();
+    }
+    saveStorageData(data);
+
+    // Show Explanation
+    const expCard = document.getElementById('explanationCard');
+    const expStatus = document.getElementById('expStatus');
+    if (isCorrect) {
+      expStatus.textContent = "⭕️ 正解！お見事です！";
+      expStatus.className = "exp-status status-correct";
+    } else {
+      expStatus.textContent = "❌ 不正解... ここを復習しましょう！";
+      expStatus.className = "exp-status status-wrong";
+    }
+
+    let ansText = "";
+    if (q.type === 'choice4') {
+      ansText = q.options[q.answer];
+    } else if (q.type === 'fillin') {
+      ansText = q.answer + (q.aliases && q.aliases.length ? ` (別解: ${q.aliases.join(', ')})` : "");
+    } else if (q.type === 'tf') {
+      ansText = q.answer ? "正しい" : "誤り";
+    } else if (q.type === 'sort') {
+      ansText = q.answer.map((idx, i) => `${i+1}. ${q.options[idx]}`).join(' → ');
+    }
+
+    document.getElementById('expCorrectAnswer').textContent = `【正解】 ${ansText}`;
+    document.getElementById('expReason').textContent = q.explanation.reason;
+    document.getElementById('expKeyPoint').textContent = q.explanation.key_point;
+    document.getElementById('expTrap').textContent = q.explanation.trap;
+    document.getElementById('expPhoto').textContent = `元資料：${q.explanation.photo}（${q.source_photo}）`;
+
+    expCard.style.display = 'block';
+    document.getElementById('btnNext').style.display = 'block';
+  }
+
+  // Next Question or Result
+  function nextQuestion() {
+    currentQIndex++;
+    if (currentQIndex < activeQuestionList.length) {
+      renderCurrentQuestion();
+    } else {
+      showResultScreen();
+    }
+  }
+
+  // Result Screen
+  function showResultScreen() {
+    document.getElementById('quizScreen').classList.add('hide');
+    document.getElementById('resultScreen').classList.remove('hide');
+
+    const total = activeQuestionList.length;
+    // Guarantee score cannot exceed total and rate is 0-100%
+    currentScore = Math.min(currentScore, total);
+    const rate = Math.max(0, Math.min(100, Math.round((currentScore / total) * 100)));
+
+    document.getElementById('resScore').textContent = `${currentScore} / ${total} 問 正解`;
+    document.getElementById('resRate').textContent = `正答率 ${rate}%`;
+
+    // Realistic educational feedback messages without score guarantee
+    let msg = "";
+    if (rate === 100) {
+      msg = "全問正解！完璧な仕上がりです。定期テストでも最高の手応えが期待できます！🏆";
+    } else if (rate >= 80) {
+      msg = "高得点ペース！間違えた問題の解説と暗記ノートを復習して万全にしましょう。✨";
+    } else if (rate >= 60) {
+      msg = "基礎力は定着しています。差がつく標準・応用問題をノートで再確認しましょう。💪";
+    } else {
+      msg = "まずは「第1章：最重要事項」とノートの「赤字・囲み」の知識から固めていきましょう。📖";
+    }
+    document.getElementById('resMsg').textContent = msg;
+
+    // Unit Breakdown
+    const unitMap = {};
+    currentResults.forEach(r => {
+      const u = r.question.unit;
+      if (!unitMap[u]) unitMap[u] = { total: 0, correct: 0 };
+      unitMap[u].total++;
+      if (r.isCorrect) unitMap[u].correct++;
+    });
+
+    const unitBd = document.getElementById('resUnitBreakdown');
+    unitBd.innerHTML = Object.keys(unitMap).map(u => {
+      const st = unitMap[u];
+      const uRate = Math.max(0, Math.min(100, Math.round((st.correct / st.total) * 100)));
+      return `
+        <div class="unit-item">
+          <div class="unit-header">
+            <span>${u}</span>
+            <span>${st.correct} / ${st.total}問 (${uRate}%)</span>
+          </div>
+          <div class="progress-bg">
+            <div class="progress-bar" style="width: ${uRate}%;"></div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Wrong Questions Review List
+    const wrongList = currentResults.filter(r => !r.isCorrect);
+    const revList = document.getElementById('resReviewList');
+    const btnRetryWrong = document.getElementById('btnRetryWrong');
+
+    if (wrongList.length === 0) {
+      document.getElementById('resReviewTitle').textContent = "全問正解！復習の必要はありません！🎉";
+      revList.innerHTML = "";
+      btnRetryWrong.style.display = 'none';
+    } else {
+      document.getElementById('resReviewTitle').textContent = `間違えた問題の復習（${wrongList.length}問）`;
+      btnRetryWrong.style.display = 'block';
+      revList.innerHTML = wrongList.map((r, idx) => `
+        <div class="review-item" onclick="toggleReviewAccordion(${idx})">
+          <div class="review-q">
+            <span>${r.question.question.substring(0, 42)}...</span>
+            <span style="color: var(--danger); font-size: 0.8rem;">詳細を見る ▼</span>
+          </div>
+          <div class="review-body" id="reviewBody_${idx}">
+            <p style="color: var(--danger); font-weight: 700; margin-bottom: 4px;">あなたの回答：${r.userAns}</p>
+            <p style="color: var(--success); font-weight: 700; margin-bottom: 6px;">正解：${r.question.type === 'choice4' ? r.question.options[r.question.answer] : (r.question.type === 'sort' ? r.question.answer.map((origIdx, i) => `${i+1}. ${r.question.options[origIdx]}`).join(' → ') : r.question.answer)}</p>
+            <p><strong>【解説】</strong> ${r.question.explanation.reason}</p>
+            <p><strong>【要点】</strong> ${r.question.explanation.key_point}</p>
+            <p><strong>【注意】</strong> ${r.question.explanation.trap}</p>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">資料：${r.question.source_photo}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+  }
+
+  function toggleReviewAccordion(idx) {
+    const el = document.getElementById(`reviewBody_${idx}`);
+    el.classList.toggle('open');
+  }
+
+  function restartCurrentQuiz() {
+    activeQuestionList = shuffleArray(activeQuestionList);
+    currentQIndex = 0;
+    currentScore = 0;
+    currentResults = [];
+    document.getElementById('resultScreen').classList.add('hide');
+    document.getElementById('quizScreen').classList.remove('hide');
+    renderCurrentQuestion();
+  }
+
+  function retryWrongOnly() {
+    const wrongQs = currentResults.filter(r => !r.isCorrect).map(r => r.question);
+    if (wrongQs.length === 0) return;
+    activeQuestionList = wrongQs;
+    currentQIndex = 0;
+    currentScore = 0;
+    currentResults = [];
+    document.getElementById('resultScreen').classList.add('hide');
+    document.getElementById('quizScreen').classList.remove('hide');
+    renderCurrentQuestion();
+  }
+
+  function goHome() {
+    document.getElementById('quizScreen').classList.add('hide');
+    document.getElementById('resultScreen').classList.add('hide');
+    document.getElementById('homeScreen').classList.remove('hide');
+    initHome();
+  }
+
+  function toggleBookmarkCurrent() {
+    const q = activeQuestionList[currentQIndex];
+    const data = getStorageData();
+    if (!data.favorites) data.favorites = [];
+    const idx = data.favorites.indexOf(q.id);
+    const starBtn = document.getElementById('starBtn');
+    if (idx >= 0) {
+      data.favorites.splice(idx, 1);
+      starBtn.classList.remove('active');
+    } else {
+      data.favorites.push(q.id);
+      starBtn.classList.add('active');
+    }
+    saveStorageData(data);
+  }
+
+  function toggleTheme() {
+    const current = document.body.getAttribute('data-theme');
+    const next = (current === 'dark') ? 'light' : 'dark';
+    document.body.setAttribute('data-theme', next);
+    document.getElementById('themeBtn').textContent = (next === 'dark') ? '☀️' : '🌙';
+    try {
+      localStorage.setItem('REKISHI_THEME', next);
+    } catch (e) {}
+  }
+
+  function confirmResetData() {
+    if (confirm("これまでの学習履歴（解答回数、正誤データ、ブックマーク）をすべてリセットしますか？")) {
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch (e) {}
+      initHome();
+      alert("学習履歴をリセットしました。");
+    }
+  }
+
+  // Load saved theme
+  try {
+    const savedTheme = localStorage.getItem('REKISHI_THEME');
+    if (savedTheme) {
+      document.body.setAttribute('data-theme', savedTheme);
+      document.getElementById('themeBtn').textContent = (savedTheme === 'dark') ? '☀️' : '🌙';
+    }
+  } catch (e) {}
+
+  // Start Home
+  initHome();
+</script>
+</body>
+</html>
